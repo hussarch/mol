@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="date" content="2013-10-23">
+<title>注册</title>
+<!--为了让IE支持HTML5元素，做如下操作：-->
+<!--[if IE]> 
+
+<script type="text/javascript"> 
+
+document.createElement("section"); 
+
+document.createElement("header"); 
+
+document.createElement("footer"); 
+
+</script> 
+
+<![endif]-->
+
+<script type="text/javascript">  
+
+		function showme(){
+			alert(1);
+		}
+
+        function check() {  
+            var passwd1 = document.forms['registerForm'].password;  
+            var passwd2 = document.forms['registerForm'].repetPassword;  
+            if(passwd1.value != passwd2.value) {  
+                passwd2.setCustomValidity("密码不一致！");  
+                return false;  
+            } else {  
+                passwd2.setCustomValidity("");  
+            }  
+            return true;  
+        }  
+    </script>
+</head>
+<body>
+    <section class="wrap">
+        <form action="#" id="registerForm" method="post" onsubmit="return check();">
+            <section class="loginForm">
+                <h1>注册</h1>
+                <div class="loginForm_content">
+                    <fieldset>
+                        <div class="inputWrap">
+                            <input type="text" name="userName" placeholder="姓名" autofocus required>
+                        </div>
+                        <div class="inputWrap">
+                            <input type="email" name="email" placeholder="邮箱" required>
+                        </div>
+                        <div class="inputWrap">
+                            <input type="text" name="skypeId" placeholder="Skype ID" required>
+                        </div>
+                        <div class="inputWrap">
+                            <input type="number" name="mobile" placeholder="手机号" required>
+                        </div>
+                        <div class="inputWrap">
+                            <input type="text" name="employeeId" placeholder="员工号">
+                        </div>
+                        <div class="inputWrap">
+                            <input type="password" name="password" placeholder="请输入密码" required>
+                        </div>
+                        <div class="inputWrap">
+                            <input type="password" name="repetPassword" placeholder="请再次输入密码" required>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <span style="padding-left: 10px;">已有密码，<a href="#">登陆</a></span> 
+                        <input type="submit" value="注册">
+                    </fieldset>
+                </div>
+            </section>
+        </form>
+    </section>
+    <footer>
+        <section>
+            Mavenir ShangHai Office Service On Line © hussar HTML5
+        </section>
+        <section>
+                请使用Cherome登录
+        </section>
+    </footer>
+</body>
+</html>
+
+
+
+<li class="J_Menu menu favorite" data-spm="1997525053" data-spm-max-idx="3">
+    <div class="menu-hd">
+		<a href="http://shoucang.taobao.com/shop_collect_list.htm?spm=1.7274553.1997525053.1.nJT6Fj" target="_top"
+			data-spm-anchor-id="1.7274553.1997525053.1"><span class="g-icon"></span>
+			<span>收藏夹</span></a>
+			<span class="arrow-icon-wrapper">
+				<span class="g-icon arrow-icon"></span>
+			</span>
+	</div>
+	<div class="menu-bd menu-list">
+		<div class="menu-bd-panel">
+			<a href="http://shoucang.taobao.com/item_collect.htm?spm=1.7274553.1997525053.2.nJT6Fj" target="_top" data-spm-anchor-id="1.7274553.1997525053.2">收藏的宝贝</a>
+			<a href="http://shoucang.taobao.com/shop_collect_list.htm?spm=1.7274553.1997525053.3.nJT6Fj" target="_top"
+				data-spm-anchor-id="1.7274553.1997525053.3">收藏的店铺</a>
+		</div>
+	</div></li>

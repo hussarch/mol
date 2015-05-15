@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/jsp/msj/booking.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/user/forgetPasword.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/user/login.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/user/resetPassword.jsp=UTF-8
+encoding//WebContent/conf/project.properties=UTF-8
+encoding//resource/log4j.properties=UTF-8
+encoding//resource/project.properties=UTF-8
+encoding//source/common_conf.properties=UTF-8
+encoding//source/employee.info.properties=UTF-8
+encoding//source/log4j.properties=UTF-8

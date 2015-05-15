@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+
+.content{
+	margin: 30px auto;
+    overflow: hidden;
+    float: none;
+    background: #FFFFFF;
+    border: solid #6A5ACD;
+	border-width: 1px 1px 1px 1px;
+	border-radius: 3px;
+}
+
+.registerHeader{
+	background: url(../image/regist-word.png) no-repeat;
+	height: 46px;
+}
+
+fieldset{
+	border: 0px;
+}
+
+table tr{
+	height: 40px;
+}
+
+.field_label{
+	text-align: right;
+	width: 90px;
+	display: inline-block; 
+	color: #666;
+}
+
+.required{
+	height:20px;
+    display:inline-block;
+    margin:1px 1px;
+    text-align:center;
+    line-height:20px;  
+	color: red;
+}
+
+table tr td input[type=text], input[type=email], input[type=number], input[type=password], input[type=date]{
+	width: 220px;
+	font-size: 16px;
+	height: 30px;
+	margin-left: 10px;
+}
+
+select {
+	width: 224px;
+	font-size: 16px;
+	height: 36px;
+	margin-left: 10px;
+}
+
+

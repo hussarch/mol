@@ -1,0 +1,1401 @@
+@CHARSET "UTF-8";
+
+/* CSS Document */
+/* add by wxh*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td
+	{
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption,th {
+	text-align: left;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+input,select {
+	color: #15648F;
+}
+
+.clear_float:after {
+	display: block;
+	visibility: hidden;
+	height: 0;
+	clear: both;
+	content: "";
+}
+
+.clear_float {
+	display: inline-block;
+}
+
+.clear_float {
+	zoom: 1;
+}
+
+.clear_float {
+	display: block;
+}
+
+.get-register-form .error-li input {
+	border: 1px solid #F00;
+}
+
+.get-register-form .username-default {
+	color: #ccc;
+}
+
+/* main container*/
+.main-wrap {
+	width: 100%;
+}
+
+.main-container {
+	width: 900px;
+	margin-top: 30px;
+	font-family: Verdana;
+	font-size: 12px;
+}
+
+.login-left {
+	width: 480px;
+	height: 500px;
+	background: url(images/loginbg-left.jpg) no-repeat;
+	float: left;
+}
+
+.login-left a {
+	width: 480px;
+	height: 500px;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	display: block;
+}
+
+.login-right-shadow1 {
+	margin-top: 25px;
+	float: right;
+	width: 357px;
+	height: 412px;
+	border: 1px solid #FAFAFA;
+}
+
+.login-right-shadow2 {
+	width: 355px;
+	height: 410px;
+	border: 1px solid #F1F1F1;
+}
+
+.login-right {
+	width: 353px;
+	height: 408px;
+	border: 1px solid #ccc;
+}
+
+/* login list*/
+.login-right ul {
+	padding: 25px;
+	color: #666;
+}
+
+.error-line {
+	height: 35px;
+}
+
+.error-message {
+	display: inline-block;
+	padding-left: 25px;
+	height: 35px;
+	background: url(images/login-tab.png) no-repeat -134px 0px;
+	color: #F00;
+	display: none;
+}
+
+.login-username {
+	display: inline-block;
+	height: 60px;
+}
+
+.login-username .username-default {
+	color: #ccc;
+}
+
+.login-username span {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	padding: 9px 5px;
+	width: 60px;
+	display: inline-block;
+	float: left;
+	font-size: 14px;
+}
+
+.login-username input {
+	float: left;
+	width: 220px;
+	padding: 9px 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: 1px solid #ccc;
+	font-family: Verdana;
+	color: #666;
+}
+
+.login-password {
+	display: inline-block;
+	height: 45px;
+}
+
+.login-password span {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	padding: 9px 5px;
+	width: 60px;
+	display: inline-block;
+	font-size: 14px;
+}
+
+.login-password input {
+	width: 220px;
+	padding: 9px 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: 1px solid #ccc;
+	font-family: Verdana;
+	color: #666;
+}
+
+.auto-login {
+	height: 50px;
+	padding-left: 70px;
+	_padding-left: 66px;
+	*padding-left: 66px;
+}
+
+.auto-login span {
+	padding-left: 5px;
+	display: inline-block;
+}
+
+.auto-login input {
+	vertical-align: -2px;
+	_vertical-align: -3px;
+	*vertical-align: -4px;
+}
+
+.forget-psd {
+	width: 120px;
+	display: inline-block;
+	text-align: right;
+}
+
+.forget-psd a {
+	color: #0076BE;
+}
+
+.login-btn {
+	width: 235px;
+	height: 100px;
+	padding-left: 70px;
+	_padding-left: 66px;
+	*padding-left: 66px;
+}
+
+.btn-login {
+	background: url(images/login-tab.png) no-repeat 0px -177px;
+	width: 235px;
+	height: 45px;
+	border: none;
+	cursor: pointer;
+}
+
+.lg_loading {
+	display: block;
+	margin-left: 18px;
+	width: 130px;
+	height: 35px;
+	background: url(images/login_loading.gif) no-repeat;
+}
+
+.login-qq {
+	height: 67px;
+	background: url(images/login-tab.png) no-repeat -118px -43px;
+	background-color: #F7F6F1;
+	border-top: 1px dotted #ccc;
+}
+
+.login-qq span {
+	padding: 11px 0 0 65px;
+	width: 220px;
+	display: inline-block;
+}
+
+.login-qq a {
+	color: #0074C1;
+}
+
+.login-qq .qq-login {
+	padding-left: 20px;
+	padding-bottom: 1px;
+	width: 50px;
+	display: inline-block;
+	background: url(images/login-tab.png) no-repeat -139px -133px;
+	color: #666;
+	text-decoration: none;
+}
+
+/* find passward help*/
+.bkt-login {
+	width: 900px;
+	height: 30px;
+}
+
+.bkt-login a {
+	font-size: 14px;
+	color: #0374C2;
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+.find-pass-help {
+	width: 900px;
+	height: 45px;
+}
+
+.find-pass-help span {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	font-size: 24px;
+	color: #666
+}
+
+.find-pass-help .help-add {
+	font-size: 14px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bolder;
+}
+
+.get-register-form .register-info-error a.forget-psd {
+	width: 145px;
+	background-color: #FFECEC;
+	padding: 2px 7px;
+	border: 1px solid #FFD7D7;
+	color: #C00;
+	text-decoration: underline;
+	display: inline-block;
+	border-radius: 2px;
+	margin-left: 15px;
+	position: absolute;
+	margin-top: -3px;
+	*margin-top: -4px;
+}
+/* find passward mobile tab*/
+.tab-findpass-shadow1 {
+	border: 1px solid #fafafa;
+	width: 900px;
+}
+
+.tab-findpass-shadow2 {
+	border: 1px solid #f1f1f1;
+	width: 900px;
+}
+
+.tab-findpass {
+	border: 1px solid #d1d1d1;
+	width: 900px;
+}
+
+.tabbox {
+	overflow: hidden;
+}
+
+.tabbox .tabbtn {
+	width: 100%;
+	height: 60px;
+	background: url(images/login-tab.png) repeat-x 0px -224px;
+}
+
+.tabbox .tabbtn li {
+	margin-left: 20px;
+	_margin-left: 10px;
+	margin-top: 8px;
+	*margin-top: 8px;
+	_margin-top: 8px;
+	width: 232px;
+	height: 50px;
+	float: left;
+	margin-right: 2px;
+}
+
+.tabbox .tabbtn li a {
+	width: 232px;
+	height: 50px;
+	display: block !important;
+	display: inline-block;
+}
+
+.tab-findpass .tabbox .tab-mobile {
+	cursor: pointer;
+	background: url(images/login-tab.png) 0px -389px;
+}
+
+.tab-findpass .tabbox li.current .tab-mobile {
+	cursor: pointer;
+	background: url(images/login-tab.png) 0px -286px;
+	border: 1px solid #d1d1d1;
+	border-bottom: 1px solid #fff;
+}
+
+.tab-findpass .tabbox .tab-email {
+	cursor: pointer;
+	background: url(images/login-tab.png) 0px -439px;
+	border-left: 2px solid #eee;
+}
+
+.tab-findpass .tabbox li.current .tab-email {
+	cursor: pointer;
+	background: url(images/login-tab.png) 0px -335px;
+	border: 1px solid #d1d1d1;
+	border-bottom: 1px solid #fff;
+}
+
+.tabbox .tabcon {
+	border-color: #ddd;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #666;
+}
+
+.tabbox input {
+	border-color: #ddd;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #666;
+}
+
+/* mobile tab & mail*/
+.get-mobile,.get-email {
+	padding: 30px 30px 0 30px;
+}
+
+.get-mobile li,.get-email li {
+	width: 840px;
+	height: 55px;
+	border-bottom: 1px dotted #ccc;
+}
+
+.get-mobile .mobile-info {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	width: 95px;
+	padding: 9px 5px 9px 15px;
+	font-size: 14px;
+	display: inline-block;
+	float: left;
+}
+
+.get-mobile input {
+	margin-left: 15px;
+	width: 244px;
+	padding: 9px 5px;
+	font-size: 12px;
+	border: 1px solid #999;
+	float: left;
+}
+
+.get-mobile .mbsend-btn {
+	float: left;
+	width: 118px;
+	padding: 9px 5px 11px 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -490px;
+	cursor: pointer;
+}
+
+.get-mobile .mobile-des {
+	width: 260px;
+	display: block;
+	float: left;
+	padding: 1px 0 0 15px;
+	line-height: 15px;
+}
+
+.get-mobile-form,.get-email-form {
+	padding: 20px 30px 30px 30px;
+}
+
+.get-mobile-form li,.get-email-form li {
+	width: 840px;
+	height: 55px;
+}
+
+.get-mobile-form .mobile-info {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	width: 95px;
+	padding: 9px 5px 9px 15px;
+	font-size: 14px;
+	display: inline-block;
+	float: left;
+}
+
+.get-mobile-form input,.get-email-form input {
+	margin-left: 15px;
+	width: 244px;
+	padding: 9px 5px;
+	font-size: 12px;
+	border: 1px solid #999;
+	float: left;
+}
+
+.get-mobile-form .mobile-info-error,.get-email-form .email-info-error {
+	width: 350px;
+	padding: 9px 5px 9px 40px;
+	font-size: 12px;
+	color: #F00;
+	display: inline-block;
+	float: left;
+	background: url(images/login-tab.png) no-repeat -119px 8px;
+}
+
+.get-mobile-form .error-input,.get-email-form .error-input {
+	border: 1px solid #F00;
+}
+
+.get-mobile-form .error-li input {
+	border: 1px solid #F00;
+}
+
+.get-email-form .error-li input {
+	border: 1px solid #F00;
+}
+
+.get-mobile-form .mbsub-btn,.get-email-form .mbsub-btn {
+	height: 46px;
+	float: left;
+	width: 255px;
+	padding: 9px 5px 11px 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -529px;
+	cursor: pointer;
+}
+
+.get-email .email-info {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	width: 105px;
+	text-align: right;
+	padding: 9px 5px 9px 15px;
+	font-size: 14px;
+	font-weight: bolder;
+	display: inline-block;
+	float: left;
+}
+
+.get-email .email-address {
+	width: 105px;
+	text-align: right;
+	padding: 9px 5px 9px 15px;
+	font-size: 14px;
+	font-weight: normal;
+	display: inline-block;
+	float: left;
+}
+
+.get-email-form .email-info {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	width: 105px;
+	text-align: right;
+	padding: 9px 5px 9px 15px;
+	font-size: 14px;
+	font-weight: bolder;
+	display: inline-block;
+	float: left;
+}
+
+.input-mail-address {
+	padding: 130px 0 150px 190px;
+}
+
+.input-mail-address li {
+	height: 35px;
+}
+
+.input-mail-address .email-info {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	width: 82px;
+	padding: 9px 0px;
+	text-align: left;
+	font-size: 14px;
+	display: inline-block;
+	float: left;
+}
+
+.input-mail-address input {
+	margin-left: 12px;
+	width: 310px;
+	padding: 9px 5px 9px 5px;
+	font-size: 12px;
+	border: 1px solid #999;
+	float: left;
+}
+
+.input-mail-address .error-input {
+	border: 1px solid #F00;
+}
+
+.input-mail-address .mailsub-btn {
+	float: left;
+	width: 68px;
+	padding: 8px 5px;
+	height: 35px;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -576px;
+	cursor: pointer;
+	color: #FFF;
+}
+
+.input-mail-address .email-info-error {
+	height: 30px;
+	background: url(images/login-tab.png) no-repeat -119px 6px;
+	padding-top: 6px;
+	padding-left: 35px;
+	margin-top: 5px;
+	margin-left: 75px;
+	display: block;
+	color: #ff0000;
+}
+
+.send-mail-address {
+	font-size: 14px;
+	text-align: center;
+	padding: 130px 0 150px 0px;
+}
+
+.send-mail-address a {
+	color: #666;
+	text-decoration: underline;
+}
+
+/* register list*/
+.red-character {
+	color: #F00;
+	font-weight: bolder;
+}
+
+.register-container-shadow1 {
+	border: 1px solid #fafafa;
+	width: 900px;
+}
+
+.register-container-shadow2 {
+	border: 1px solid #f1f1f1;
+	width: 900px;
+}
+
+.register-container {
+	border: 1px solid #d1d1d1;
+	width: 900px;
+}
+
+.register-help {
+	width: 900px;
+	height: 45px;
+}
+
+.register-helper a {
+	color: #0075C1;
+}
+
+.qq-register-helper {
+	padding: 6px 0 6px 15px;
+	font-size: 14px;
+	background-color: #FFFFCC;
+}
+
+.qq-register-helper a {
+	color: #0075C1;
+}
+
+.register-help span {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	font-size: 24px;
+	color: #666;
+	width: 200px;
+	float: left;
+}
+
+.register-help .qq-help {
+	float: right;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #0075C2;
+	padding-top: 15px;
+}
+
+.register-form {
+	padding: 15px;
+	color: #666;
+	_padding-right: 0px;
+}
+
+.register-form .register-qq {
+	background-color: #F9F9F9;
+	height: 100px;
+	margin-bottom: 20px;
+	width: 830px;
+	margin-left: 20px;
+}
+
+.register-form .register-qq .qq-icon {
+	background-color: #333;
+	width: 100px;
+	height: 100px;
+	display: block;
+	float: left;
+	margin-right: 30px;
+}
+
+.register-form .register-qq .qq-info {
+	padding-top: 15px;
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	font-size: 18px;
+	color: #999;
+	display: block;
+}
+
+.register-form .register-qq .qq-info span {
+	display: block;
+	line-height: 35px;
+}
+
+.register-form .qq-username {
+	color: #E95903;
+}
+
+.register-form .register-qq .qq-info span {
+	display: block;
+	line-height: 30px;
+}
+
+.register-form .register-qq .qq-info {
+	padding-top: 5px;
+}
+
+.register-form .register-qq .qq-bound {
+	padding-top: 20px;
+}
+
+.register-form .qq-bd {
+	color: #0075C1;
+}
+
+.register-helper {
+	padding: 6px 0 6px 15px;
+	font-size: 14px;
+	background-color: #FFFFCC;
+}
+
+.register-helper span {
+	color: #F00;
+	font-weight: bolder;
+}
+
+.register-info-help {
+	width: 350px;
+	padding: 9px 5px 9px 16px;
+	font-size: 12px;
+	display: inline-block;
+	float: left;
+}
+
+.get-register-form {
+	padding: 20px 30px 30px 30px;
+	font-family: Verdana;
+}
+
+.get-register-form li {
+	width: 840px;
+	height: 55px;
+}
+
+.get-register-form input {
+	font-family: Verdana;
+	color: #666;
+	margin-left: 15px;
+	width: 244px;
+	padding: 9px 5px;
+	font-size: 14px;
+	border: 1px solid #999;
+	float: left;
+}
+
+.get-register-form .register-info-error {
+	width: 350px;
+	padding: 9px 5px 9px 40px;
+	font-size: 12px;
+	color: #F00;
+	display: inline-block;
+	float: left;
+	background: url(images/login-tab.png) no-repeat -119px 8px;
+}
+
+.get-register-form .mbsend-btn {
+	float: left;
+	width: 142px;
+	height: 34px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -659px;
+	cursor: pointer;
+	margin-left: 265px;
+}
+
+.get-register-form .mobile-des {
+	width: 260px;
+	display: block;
+	float: left;
+	padding: 1px 0 0 15px;
+	line-height: 15px;
+}
+
+.get-register-form .error-input {
+	border: 1px solid #F00;
+}
+
+.get-register-form .rgsub-btn {
+	height: 46px;
+	float: left;
+	width: 255px;
+	padding: 9px 5px 11px 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -612px;
+	cursor: pointer;
+}
+
+.get-register-form .rgsub-btn-gray {
+	height: 46px;
+	float: left;
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	width: 255px;
+	padding: 9px 5px 11px 5px;
+	font-size: 18px;
+	font-weight: bolder;
+	border: 1px solid #ccc;
+}
+
+.get-register-form .qqsub-btn {
+	height: 46px;
+	float: left;
+	width: 255px;
+	padding: 9px 5px 11px 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -935px;
+	cursor: pointer;
+}
+
+.get-register-form .qqsub-btn-gray {
+	height: 46px;
+	float: left;
+	width: 255px;
+	padding: 9px 5px 11px 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -993px;
+}
+
+.get-register-form .qqbound-btn {
+	height: 46px;
+	float: left;
+	width: 255px;
+	padding: 9px 5px 11px 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -1042px;
+	cursor: pointer;
+}
+
+.get-register-form .qqbound-btn-gray {
+	height: 46px;
+	float: left;
+	width: 255px;
+	padding: 9px 5px 11px 5px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -1093px;
+}
+
+.get-register-form .register-info {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	width: 115px;
+	text-align: right;
+	padding: 9px 5px 9px 15px;
+	font-size: 14px;
+	display: inline-block;
+	float: left;
+}
+
+.get-register-form .register-info-confirm {
+	width: 50px;
+	height: 35px;
+	float: left;
+	background: url(images/login-tab.png) no-repeat -216px -490px;
+}
+
+.rg-select-input {
+	margin-top: 7px;
+	font-family: Verdana;
+	margin-left: 15px;
+	font-size: 14px;
+	float: left;
+	color: #666;
+}
+
+.select-long {
+	width: 180px;
+}
+
+.select-short {
+	width: 90px;
+}
+
+.check-agreement {
+	width: 250px;
+	height: 10px;
+	display: inline-block;
+	margin-top: 20px;
+	color: #0175C0;
+	text-align: left;
+}
+
+.qq-forgetpass {
+	width: 250px;
+	height: 10px;
+	display: inline-block;
+	margin-top: 18px;
+	text-align: left;
+	padding-left: 15px;
+}
+
+.qq-forgetpass a {
+	color: #0175C0;
+}
+
+.check-agreement input {
+	width: 15px;
+	height: 15px;
+	border: none;
+	margin-right: 5px;
+	padding: 0px;
+}
+
+.wrap-xieyi {
+	margin: 0px auto;
+	width: 780px;
+	border: 1px solid #999999;
+	margin-bottom: 40px;
+}
+
+.box-xieyi {
+	border-top: 3px solid #e6e6e6;
+	border-left: 2px solid #e6e6e6;
+	overflow: auto;
+	padding: 10px;
+	height: 130px;
+}
+
+.box-xieyi h1,.box-xieyi h3,.box-xieyi p {
+	font-size: 12px;
+	line-height: 20px;
+}
+
+/* register lcomplete*/
+.rg-complete-title {
+	padding-left: 120px;
+}
+
+.rg-complete-title span {
+	padding: 15px 0px 0px 80px;
+	display: inline-block;
+	height: 60px;
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	font-size: 35px;
+	color: #339700;
+	background: url(images/rg-complete.jpg) no-repeat;
+}
+
+.register-complete-shadow1 {
+	float: left;
+	border: 1px solid #fff;
+	width: 590px;
+	_width: 588px;
+	margin-bottom: 30px;
+}
+
+.register-complete-shadow2 {
+	border: 1px solid #fff;
+	width: 590px;
+	_width: 588px;
+}
+
+.register-complete {
+	border: 1px solid #fff;
+	width: 590px;
+	_width: 588px;
+}
+
+.rg-complete-form {
+	padding: 30px 24px;
+	font-family: Verdana;
+}
+
+.rg-complete-form .rg-dot {
+	background: url(images/login-tab.png) no-repeat -246px -323px;
+	padding-left: 20px;
+}
+
+.rg-complete-form ul li {
+	font-family: "\5B8B\4F53";
+	color: #999;
+	font-size: 16px;
+	height: 40px;
+}
+
+.fdps-form  ul li {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	color: #666;
+}
+
+.rg-complete-form ul li span {
+	color: #EA5803;
+}
+
+.rg-complete-txt {
+	padding-left: 20px;
+}
+
+.rg-gray-bg {
+	background-color: #F2F2F2;
+	padding: 20px 35px 10px;
+}
+
+.rg-gray-bg2 {
+	background-color: #F2F2F2;
+	padding: 0px 35px 10px;
+}
+
+.rg-gray-bg3 {
+	background-color: #F2F2F2;
+	padding: 0px 35px;
+	margin-bottom: 20px;
+	margin-top: -2px;
+}
+
+.rg-mobile-confirm {
+	height: 30px;
+	padding: 0;
+	display: inline-block;
+}
+
+.rg-mobile-confirm a {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: normal;
+	color: #666;
+	display: inline-block;
+	height: 35px;
+	padding-top: 1px;
+	padding-left: 20px;
+	width: 280px;
+}
+
+.rg-complete-form .error-li input {
+	border: 1px solid #F00;
+}
+
+.rg-mobile-confirm .mbsend-btn {
+	font-family: Verdana;
+	float: left;
+	width: 142px;
+	height: 35px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -658px;
+	cursor: pointer;
+	color: #666;
+	font-size: 13px;
+}
+
+.rg-mobile-confirm .mbsub-btn {
+	font-family: Verdana;
+	float: left;
+	width: 117px;
+	height: 34px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -697px;
+	cursor: pointer;
+	color: #666;
+	font-size: 13px;
+}
+
+.rg-complete-form .error-li  .mbsub-btn {
+	border: none;
+	cursor: pointer;
+}
+
+.rg-mobile-confirm input {
+	font-family: Verdana;
+	color: #666;
+	margin-right: 15px;
+	width: 244px;
+	padding: 9px 5px 7px 5px;
+	font-size: 14px;
+	border: 1px solid #999;
+	float: left;
+}
+
+.rg-dot a {
+	width: 180px;
+	display: inline-block;
+	color: #ea5803;
+	background: url(images/login-tab.png) no-repeat 164px -739px;
+}
+
+.rg-gray-bg3 .mobile-info-error {
+	font-family: Verdana;
+	width: 350px;
+	padding: 9px 5px 9px 30px;
+	font-size: 12px;
+	color: #F00;
+	display: inline-block;
+	float: left;
+	background: url(images/login-tab.png) no-repeat -235px -661px;
+}
+
+.favourable-code {
+	background-color: #f2f2f2;
+}
+
+.rg-favourable-confirm {
+	height: 30px;
+	padding: 0;
+	display: inline-block;
+}
+
+.rg-favourable-confirm input {
+	font-family: Verdana;
+	color: #666;
+	margin-right: 15px;
+	width: 244px;
+	padding: 9px 5px 7px 5px;
+	font-size: 14px;
+	border: 1px solid #999;
+	float: left;
+}
+
+.rg-favourable-confirm .fbsub-btn {
+	font-family: Verdana;
+	float: left;
+	width: 75px;
+	height: 34px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat -180px -697px;
+	cursor: pointer;
+	color: #666;
+	font-size: 13px;
+}
+
+.favourable-code .favourable-code-txt {
+	font-size: 14px;
+	font-family: Verdana;
+	font-weight: bolder;
+	padding: 0;
+	height: 30px;
+	color: #666;
+	float: left;
+	display: block;
+	width: 80px;
+	padding-top: 8px;
+}
+
+.rg-complete-bottom {
+	font-family: "\5B8B\4F53";
+	color: #999;
+	font-size: 16px;
+	height: 60px;
+	text-align: right;
+	padding-top: 20px;
+	border-top: 1px dotted #ccc;
+	margin-top: 20px;
+}
+
+.rg-complete-bottom span {
+	width: 100px;
+	height: 36px;
+	display: block;
+	float: right;
+	padding-top: 14px;
+	padding-right: 10px;
+}
+
+.rg-complete-bottom .viewcar-btn {
+	float: right;
+	font-family: Verdana;
+	width: 204px;
+	height: 46px;
+	font-size: 12px;
+	font-weight: bolder;
+	border: none;
+	background: url(images/login-tab.png) no-repeat 0px -770px;
+	cursor: pointer;
+	color: #666;
+	font-size: 13px;
+}
+
+.bond-success {
+	font-family: "verdana";
+	font-size: 14px;
+	color: #999;
+	padding: 10px 60px;
+	background: url(images/rg-complete.jpg) no-repeat 3px -83px;
+	background-color: #FFFCD3;
+	margin-bottom: 20px;
+}
+
+.bond-success span {
+	color: #EA5803;
+}
+
+.bond-success a {
+	color: #999;
+}
+
+.rg-complete-form .cf-dot {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	background: url(images/login-tab.png) no-repeat -246px -321px;
+	padding-left: 20px;
+}
+
+.cf-dot a {
+	display: inline-block;
+	color: #ea5803;
+}
+
+.rg-complete-form  .fdps-txt {
+	padding-left: 30px;
+	font-family: "\5B8B\4F53";
+	color: #666;
+	background: none;
+}
+
+.rg-complete-form  .fdps-txt a {
+	font-weight: bolder;
+}
+
+/*register city*/
+.ydcity-box {
+	width: 298px;
+	background: #fff;
+	border: solid 1px #F58B45;
+	overflow: hidden;
+	display: none;
+	font-size: 12px;
+}
+
+.ydcity-box .wrap-title {
+	width: 298px;
+	overflow: hidden;
+}
+
+.ydcity-box .list-type {
+	width: 310px;
+	height: 29px;
+	line-height: 30px;
+	background: #FFEBAF;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.ydcity-box .list-type li {
+	float: left;
+	width: 50px;
+	text-align: center;
+	color: #a84c19;
+	font-family: Tahoma;
+	cursor: pointer;
+}
+
+.ydcity-box .list-type li.current {
+	color: #555;
+	background: #fff;
+}
+
+.ydcity-box .list-city {
+	overflow: hidden;
+}
+
+.ydcity-box .list-city li {
+	color: #555;
+	display: none;
+}
+
+.ydcity-box .list-city li.current {
+	display: block;
+}
+
+.ydcity-box .list-city li .inner-box {
+	padding-bottom: 12px;
+	overflow: hidden;
+}
+
+.ydcity-box .list-city li dl {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.ydcity-box .list-city li dl dd {
+	float: left;
+	margin: 12px 0 0 12px;
+	width: 60px;
+	display: inline;
+}
+
+.ydcity-box .list-city li dl dd span {
+	padding: 2px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.ydcity-box .list-city li dl dd span.hover {
+	background: #FFE38A;
+}
+
+.register-complete-vote {
+	padding-bottom: 5px;
+	border-left: 1px dotted #ccc;
+	width: 100px;
+	float: right;
+	width: 295px;
+	padding-top: 20px;
+	padding-left: 10px;
+	_width: 294px;
+}
+
+.register-complete-vote .title {
+	background: url(images/login-vote.png) no-repeat;
+	height: 60px;
+	padding-left: 52px;
+}
+
+.register-complete-vote .title h2 {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	color: #EB5903;
+	font-size: 21px;
+	padding-top: 5px;
+}
+
+.register-complete-vote .title span {
+	color: #EB5903;
+	font-size: 12px;
+}
+
+.register-complete-vote ul {
+	font-size: 12px;
+	color: #333;
+	padding-top: 20px;
+}
+
+.register-complete-vote li {
+	vertical-align: middle;
+	line-height: 35px;
+	height: 35px;
+}
+
+.register-complete-vote li input {
+	vertical-align: middle;
+	display: inline-block;
+	margin: 0 8px;
+}
+
+.register-complete-vote li .vote-others {
+	line-height: 20px;
+	color: #333;
+	border: none;
+	border-bottom: 1px solid #333;
+	width: 150px;
+}
+
+.btn-vote {
+	text-align: center;
+	padding-top: 15px;
+}
+
+.btn-vote a {
+	width: 125px;
+	height: 43px;
+	display: block;
+	background: url(images/login-vote.png) no-repeat 0 -205px;
+	margin: 0 auto;
+}
+
+.vote-success {
+	padding-top: 100px;
+	background: none;
+}
+
+.vote-success em {
+	display: inline-block;
+	height: 110px;
+	width: 100%;
+	background: url(images/login-vote.png) no-repeat 100px -80px;
+}
+
+.vote-success span {
+	padding-left: 2px;
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	color: #999;
+	font-size: 19px;
+	line-height: 35px;
+	display: inline-block;
+}
+
+.vote-success span i {
+	font-style: normal;
+	color: #EB5903;
+}
+
+.vote-success span a,.vote-success span a:hover {
+	color: #EB5903;
+}
