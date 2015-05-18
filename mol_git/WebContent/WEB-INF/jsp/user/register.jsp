@@ -144,7 +144,7 @@ document.createElement("footer");
 							</tr>
 							<tr>
 								<td><span class="field_label">员工ID<span class="required">*</span></span><input type="number" name="employeeId" required onblur="checkIsExist(this, 'int', '该员工ID已注册')"></td>
-								<td><span class="field_label">团队</span><form:select path="organization.id" items="${organizationList}"  itemLabel="zhName" itemValue="id"></form:select></td>
+								<td><span class="field_label">团队</span><form:select path="organization.id" items="${organizationList}"  itemLabel="fullName" itemValue="id"></form:select></td>
 							</tr>
 							<tr>
 								<td>

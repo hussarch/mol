@@ -108,7 +108,7 @@ tr, td, th {
 								</td>
 								<td>
 									<span class="field_label">团队</span>
-									<span class="field_value">${userInfo.organization}</span>
+									<span class="field_value">${userInfo.organization.zhName}</span>
 								</td>
 							</tr>
 							<tr>
@@ -124,7 +124,7 @@ tr, td, th {
 							<tr>
 								<td>
 									<span class="field_label">性别</span>
-									<span class="field_value">${userInfo.gender}</span>
+									<span class="field_value">${userInfo.gender.text}</span>
                					</td>
 								<td>
 									<span class="field_label">入职日期</span>
