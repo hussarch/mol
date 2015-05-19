@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="../css/conf.setting.css">
+<style type="text/css">
+
+.timeTitle{
+	-webkit-padding-start: 0;
+	padding-left: 130px;
+}
+
+.timeTitle li{
+	list-style:none; /* 去掉ul前面的符号 */
+    margin: 0px; /* 与外界元素的距离为0 */
+    padding: 0px; /* 与内部元素的距离为0 */
+	float: left;
+	width: 60px;
+}
+
+.ta{
+	border-left: 1px solid blue; 
+	font-weight: bold;
+	height: 40px;
+}
+
+.tb{
+	border-left: 1px dotted grey; 
+	line-height:65px;
+	height: 20px;
+	margin-top: 20px;
+}	
+
+table{
+	font-family: verdana,arial,sans-serif;
+	font-size:10px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+
+table td, th{
+	border-width: 1px;
+	padding: 0px;
+	border-style: solid;
+	border-color: #999999;
+	background-color: #ffffff;
+	width: 60px;
+}
+
+
+table td:HOVER{
+	background: #CAFF70;
+}
+
+.selected{
+	background-color: #EEEE00;
+	border-radius: 3px;
+}
+
+.dayTitle{
+	-webkit-padding-start: 0;
+	margin: 0;
+	width: 100%;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+}
+
+.dayTitle li{
+	list-style:none; /* 去掉ul前面的符号 */
+    margin: 0px; /* 与外界元素的距离为0 */
+    padding: 0px; /* 与内部元素的距离为0 */
+	float: left;
+	width: 90px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	border-left: 1px solid #6A5ACD;
+	border-right: 1px solid #6A5ACD;
+	border-top: 1px solid #6A5ACD;
+	border-bottom: 1px solid #6A5ACD;
+	margin-bottom:-1px;
+	background-color: #E5E5E5;
+	color: #828282;
+}
+
+</style>
+
+</head>
+<body>
+	<section style="width: 1282px; margin: 80px auto 0; padding: 0;">
+		<ul class="dayTitle">
+			<li style="border-bottom: 1px solid #FFFFFF; background-color: #FFFFFF; color: #000">周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li><li>周日</li>
+		</ul>
+	</section>	
+	<section style="height: 610px; width: 1280px; margin: 0 auto; border-top-left-radius: 0;" class="content">
+		<ul class="timeTitle">
+			<li class="ta">9:00</li><li class="tb">9:30</li>
+			<li class="ta">10:00</li><li class="tb">10:30</li>
+			<li class="ta">11:00</li><li class="tb">11:30</li>
+			<li class="ta">12:00</li><li class="tb">12:30</li>
+			<li class="ta">13:00</li><li class="tb">13:30</li>
+			<li class="ta">14:00</li><li class="tb">14:30</li>
+			<li class="ta">15:00</li><li class="tb">15:30</li>
+			<li class="ta">16:00</li><li class="tb">16:30</li>
+			<li class="ta">17:00</li><li class="tb">17:30</li>
+			<li class="ta" style="width: 40px; border-bottom: 0;">18:00</li>
+		</ul>
+		<table>
+			<tr>
+				<th style="width: 129px;"><span style="padding-left: 8px;">会议室1</span></th>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td class="selected"></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+			</tr>
+			<tr>
+				<th style="width: 129px;"><span style="padding-left: 8px;">会议室1</span></th>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td class="selected" colspan="3"></td>
+				<td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+			</tr>
+			<tr>
+				<th style="width: 129px;"><span style="padding-left: 8px;">会议室1</span></th>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td class="selected"></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+			</tr>
+		
+		</table>
+	</section>
+	
+</body>
+</html>
