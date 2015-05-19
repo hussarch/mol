@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link type="text/css" rel="stylesheet" href="../css/conf.setting.css">
+<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
 <style type="text/css">
 
 .timeTitle{
@@ -90,7 +91,42 @@ table td:HOVER{
 	color: #828282;
 }
 
+#leo {  
+	width: 200px;
+    position: absolute;  
+    border: 1px solid grey;  
+    background: #FFFFE0;  
+    border-radius: 3px;
+}
+
 </style>
+
+<script type="text/javascript">
+
+
+$(function() {  
+    x = 5;  
+    y = 15;  
+    $("#txt").hover(function(e) {  
+        this.title = "";  
+        var ndiv = "<div id='leo'>this a test in the page, we can show it now</div>";  
+        $("body").append(ndiv);  
+        $("#leo").css({  
+            "top" : (e.pageY + y) + "px",  
+            "left" : (e.pageX + x) + "px"  
+        }).show(2000);  
+        $(this).mousemove(function(e) {  
+            $("#leo").css({  
+                "top" : (e.pageY + y) + "px",  
+                "left" : (e.pageX + x) + "px"  
+            }).show(1000);  
+        });  
+    }, function() {  
+        $("#leo").remove();  
+    });  
+});
+	
+</script>
 
 </head>
 <body>
@@ -104,6 +140,9 @@ table td:HOVER{
 			<li>周六</li>
 			<li>周日</li>
 		</ul>
+		<span style="float: right; height: 28px;">
+		日期：<input type="date" style="height: 24px; width: 140px;">
+		</span>
 	</section>	
 	<section style="height: 610px; width: 1280px; margin: 0 auto; border-top-left-radius: 0;" class="content">
 		<ul class="timeTitle">
@@ -123,7 +162,7 @@ table td:HOVER{
 				<th style="width: 129px;"><span style="padding-left: 8px;">会议室1</span></th>
 				<td></td><td></td>
 				<td></td><td></td>
-				<td class="selected"></td><td></td>
+				<td class="selected" id="txt"></td><td></td>
 				<td></td><td></td>
 				<td></td><td></td>
 				<td></td><td></td>
@@ -132,7 +171,7 @@ table td:HOVER{
 				<td></td><td></td>
 			</tr>
 			<tr>
-				<th style="width: 129px;"><span style="padding-left: 8px;">会议室1</span></th>
+				<th style="width: 129px;"><span style="padding-left: 8px;">会议室2</span></th>
 				<td></td><td></td>
 				<td></td><td></td>
 				<td class="selected" colspan="3"></td>
@@ -144,7 +183,7 @@ table td:HOVER{
 				<td></td><td></td>
 			</tr>
 			<tr>
-				<th style="width: 129px;"><span style="padding-left: 8px;">会议室1</span></th>
+				<th style="width: 129px;"><span style="padding-left: 8px;">会议室3</span></th>
 				<td></td><td></td>
 				<td></td><td></td>
 				<td class="selected"></td><td></td>
