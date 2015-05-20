@@ -87,8 +87,16 @@ table td:HOVER{
 	border-top: 1px solid #6A5ACD;
 	border-bottom: 1px solid #6A5ACD;
 	margin-bottom:-1px;
+	margin-left:-1px;
 	background-color: #E5E5E5;
 	color: #828282;
+}
+
+.dayTitle li a{
+	color: #FFF;
+	text-decoration: none;
+	width: 100%; 
+	display:inline-block; 
 }
 
 #leo {  
@@ -130,15 +138,15 @@ $(function() {
 
 </head>
 <body>
-	<section style="width: 1282px; margin: 80px auto 0; padding: 0;">
+	<section style="width: 1280px; margin: 80px auto 0; padding: 0;">
 		<ul class="dayTitle">
-			<li style="border-bottom: 1px solid #FFFFFF; background-color: #FFFFFF; color: #000">周一</li>
+			<li>周一</li>
 			<li>周二</li>
-			<li>周三</li>
-			<li>周四</li>
-			<li>周五</li>
-			<li>周六</li>
-			<li>周日</li>
+			<li style="border-bottom: 1px solid #FFFFFF; background-color: #FFFFFF; color: #000;">周三</li>
+			<li style="background-color: #7fb80e; color: #FFF"><a href="#">周四</a></li>
+			<li style="background-color: #7fb80e; color: #FFF"><a href="#">周五</a></li>
+			<li style="background-color: #7fb80e; color: #FFF"><a href="#">周六</a></li>
+			<li style="background-color: #7fb80e; color: #FFF"><a href="#">周日</a></li>
 		</ul>
 		<span style="float: right; height: 28px;">
 		日期：<input type="date" style="height: 24px; width: 140px;">
