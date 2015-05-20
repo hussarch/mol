@@ -22,6 +22,7 @@ import com.hussar.app.mol.common.DateEditor;
 import com.hussar.app.mol.model.ManagerEntity;
 import com.hussar.app.mol.model.UserEntity;
 import com.hussar.app.mol.service.manager.ManagerService;
+import com.hussar.app.mol.service.org.OrganizationService;
 import com.hussar.app.mol.service.user.UserService;
 import com.hussar.framework.common.domain.ListPageInfo;
 import com.hussar.framework.common.domain.PagingCountBean;
@@ -42,6 +43,9 @@ public class UserManagementController {
 	
 	@Autowired
 	private ManagerService managerService;
+	
+	@Autowired
+	private OrganizationService organizationService;
 	
 	@RequestMapping(value = "/userList.do", method = {RequestMethod.POST, RequestMethod.GET})
 	public String getUserList(HttpSession session, Model model, @RequestParam(required = false) String condition, 
@@ -74,6 +78,7 @@ public class UserManagementController {
 		String jsp;
 		model.addAttribute( "userInfo", userInfo);
 		if("update".equals(listPageInfo.getFlag())){
+			model.addAttribute( "organizationList", organizationService.getOrganizationList());
 			jsp = "admin/userUpdate";
 		}else if("position".equals(listPageInfo.getFlag())){
 			ManagerEntity entity = managerService.getEntity(userInfo);

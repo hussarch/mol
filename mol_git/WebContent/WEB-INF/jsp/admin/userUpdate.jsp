@@ -115,7 +115,7 @@
 							</tr>
 							<tr>
 								<td><span class="field_label">员工ID<span class="required">*</span></span><form:input type="number" path="employeeId" required="true" onblur="checkIsExist(this, 'int', '该员工ID已注册')"/></td>
-								<td><span class="field_label">团队</span><form:select placeholder="" path="organization" items="${organizationList}"  itemLabel="teamZhName" itemValue="id"></form:select></td>
+								<td><span class="field_label">团队</span><form:select placeholder="" path="organization.id" items="${organizationList}"  itemLabel="fullName" itemValue="id"></form:select></td>
 							</tr>
 							<tr>
 								<td>

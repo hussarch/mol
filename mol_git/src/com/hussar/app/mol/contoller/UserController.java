@@ -1,10 +1,15 @@
 package com.hussar.app.mol.contoller;
 
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hussar.app.common.CommonConstants;
+import com.hussar.app.mol.common.DateEditor;
 import com.hussar.app.mol.model.UserEntity;
 import com.hussar.app.mol.service.org.OrganizationService;
 import com.hussar.app.mol.service.user.UserService;
@@ -43,6 +49,12 @@ public class UserController {
 	public String intoMene(){
 		return "common/includeMenu";  
 	}
+	
+	@InitBinder
+	protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {  
+	    //对于需要转换为Date类型的属性，使用DateEditor进行处理  
+	    binder.registerCustomEditor(Date.class, new DateEditor());  
+	}  
 	
 	@RequestMapping(value = "/regist.do", method = RequestMethod.POST)
 	public String regist(@ModelAttribute("userInfo") UserEntity userInfo, Model model) throws Exception {

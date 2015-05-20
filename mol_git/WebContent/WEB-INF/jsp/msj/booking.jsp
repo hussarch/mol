@@ -76,6 +76,7 @@
 	</jsp:include>
 	</c:if>
     <section>
+    	<c:if test="${ sessionScope.current_user.name == null}">
     	<div style="width: 100%; height: 24px; margin: 10px 0;">
             <c:choose>
                 <c:when test="${ sessionScope.current_user.name == null}">
@@ -85,22 +86,23 @@
             </c:choose>
 <!--     		<div style="width: 100%; height: 1px; border-bottom: 1px #333 solid; display: marker;"></div> -->
     	</div>
-        <div>
-<!--            <span>温馨提示： 请先选择按摩时间段，预订完成之后请按照时间提前到5楼茶水间等候。</span> -->
-           <span style="color: maroon; display: block;">本周按摩时间为：${orderDate }</span>
-           <span id="msg" style="color: blue; display: block;">${msg }&nbsp; </span>
-        </div>
-        <form:form modelAttribute="orderDay" id="submitForm" method="post" action="setOrderDay.do">
-        <c:if test="${orderDateList != null}">
-        <div>
-        	 <span>重新选择按摩时间：
+    	</c:if>
+        <div style="width: 100%; display: block; height: 22px;">
+           <span style="color: maroon; display: inline-block; float: left;">本周按摩时间为：${orderDate }</span>
+           <form:form modelAttribute="orderDay" id="submitForm" method="post" action="setOrderDay.do">
+           <c:if test="${orderDateList != null}">
+           <span style="display: inline-block; float: right;">重新选择按摩时间：
         	 	<form:select path="value" items="${orderDateList}" itemLabel="name" itemValue="value" ></form:select>
-                <button type="submit" onsubmit="return confirm('您确定修改?');" value="确定"></button>
-        	 </span>
+                <button type="submit" onsubmit="return confirm('您确定按摩时间修改吗?');">确定</button>
+        	</span>
+        	</c:if>
+	        <input type="hidden" id="param" name="msg">
+	        </form:form>
+	         
         </div>
-        </c:if>
-        <input type="hidden" id="param" name="msg">
-        </form:form>
+        <div style="width: 100%; display: block; height: 22px; margin: 0;">
+        	  <span id="msg" style="color: blue; display: block;">${msg }</span>
+        </div>
         <table border="1" style="width: 600px;">
             <thead>
                 <tr style="text-align: center;font-weight: bold;">
@@ -118,7 +120,6 @@
                     ${item.status}
                 </td>
                 <td align="center">
-                
                 	<input type="button" id="orderButton_${status.index}" value="${item.operationName }" 
                                         onclick="return submitOrder(${item.bookingEntity.orderNumber}, ${item.setFlag });"
                                         <c:if test="${item.disableFlag}">disabled="disabled"</c:if>

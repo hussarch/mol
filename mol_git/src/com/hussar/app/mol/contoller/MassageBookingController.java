@@ -74,7 +74,16 @@ public class MassageBookingController {
 		list.add(new NameValueBean("周五", Calendar.FRIDAY));
 		list.add(new NameValueBean("周六", Calendar.SATURDAY));
 		list.add(new NameValueBean("周日", Calendar.SUNDAY));
-		return list;
+		int currentDay = getCurrentDay();
+		if(currentDay == Calendar.SUNDAY){
+			return list;
+		}else{
+			return list.subList(currentDay - 2, list.size());
+		}
+	}
+	
+	private int getCurrentDay(){
+		return Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 	}
 
 	private boolean isAdmin(UserEntity user){
