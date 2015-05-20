@@ -132,7 +132,20 @@ $(function() {
     }, function() {  
         $("#leo").remove();  
     });  
+    
+    
+    $("#meettingRoom tbody tr td").each(function(){
+    	$(this).click(function(){
+    		alert(this.id);
+    	});
+    	
+    });
+    
+    
 });
+
+
+
 	
 </script>
 
@@ -165,7 +178,7 @@ $(function() {
 			<li class="t_a">17:00</li><li class="t_b"><span style="margin-left:-20px;">17:30</span></li>
 			<li class="t_a" style="width: 40px; border-bottom: 0;">18:00</li>
 		</ul>
-		<table>
+		<table id="meettingRoom">
 			<tr>
 				<th style="width: 129px;"><span style="padding-left: 8px;">会议室1</span></th>
 				<td></td><td></td>
