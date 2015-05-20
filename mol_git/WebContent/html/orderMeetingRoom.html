@@ -9,7 +9,7 @@
 
 .timeTitle{
 	-webkit-padding-start: 0;
-	padding-left: 130px;
+	padding-left: 106px;
 }
 
 .timeTitle li{
@@ -17,7 +17,7 @@
     margin: 0px; /* 与外界元素的距离为0 */
     padding: 0px; /* 与内部元素的距离为0 */
 	float: left;
-	width: 60px;
+	width: 50px;
 }
 
 .t_a{
@@ -47,7 +47,7 @@ table td, th{
 	border-style: solid;
 	border-color: #999999;
 	background-color: #ffffff;
-	width: 60px;
+	width: 50px;
 }
 
 
@@ -107,6 +107,11 @@ table td:HOVER{
     border-radius: 3px;
 }
 
+th{
+	font-weight: normal;
+	font-size: 12px;
+}
+
 </style>
 
 <script type="text/javascript">
@@ -151,7 +156,7 @@ $(function() {
 
 </head>
 <body>
-	<section style="width: 1280px; margin: 80px auto 0; padding: 0;">
+	<section style="width: 1080px; margin: 80px auto 0; padding: 0;">
 		<ul class="dayTitle">
 			<li>周一</li>
 			<li>周二</li>
@@ -162,25 +167,25 @@ $(function() {
 			<li style="background-color: #7fb80e; color: #FFF"><a href="#">周日</a></li>
 		</ul>
 		<span style="float: right; height: 28px;">
-		日期：<input type="date" style="height: 24px; width: 140px;">
+		日期：<input type="date" style="height: 24px; width: 145px;">
 		</span>
 	</section>	
-	<section style="height: 610px; width: 1280px; margin: 0 auto; border-top-left-radius: 0;" class="content">
+	<section style="height: 610px; width: 1080px; margin: 0 auto; border-top-left-radius: 0;" class="content">
 		<ul class="timeTitle">
-			<li class="t_a">9:00</li><li class="t_b"><span style="margin-left:-13px;">9:30</span></li>
-			<li class="t_a">10:00</li><li class="t_b"><span style="margin-left:-20px;">10:30</span></li>
-			<li class="t_a">11:00</li><li class="t_b"><span style="margin-left:-20px;">11:30</span></li>
-			<li class="t_a">12:00</li><li class="t_b"><span style="margin-left:-20px;">12:30</span></li>
-			<li class="t_a">13:00</li><li class="t_b"><span style="margin-left:-20px;">13:30</span></li>
-			<li class="t_a">14:00</li><li class="t_b"><span style="margin-left:-20px;">14:30</span></li>
-			<li class="t_a">15:00</li><li class="t_b"><span style="margin-left:-20px;">15:30</span></li>
-			<li class="t_a">16:00</li><li class="t_b"><span style="margin-left:-20px;">16:30</span></li>
-			<li class="t_a">17:00</li><li class="t_b"><span style="margin-left:-20px;">17:30</span></li>
-			<li class="t_a" style="width: 40px; border-bottom: 0;">18:00</li>
+			<li class="t_a">9:00</li><li class="t_b"><span style="margin-left:-11px;">9:30</span></li>
+			<li class="t_a">10:00</li><li class="t_b"><span style="margin-left:-18px;">10:30</span></li>
+			<li class="t_a">11:00</li><li class="t_b"><span style="margin-left:-18px;">11:30</span></li>
+			<li class="t_a">12:00</li><li class="t_b"><span style="margin-left:-18px;">12:30</span></li>
+			<li class="t_a">13:00</li><li class="t_b"><span style="margin-left:-18px;">13:30</span></li>
+			<li class="t_a">14:00</li><li class="t_b"><span style="margin-left:-18px;">14:30</span></li>
+			<li class="t_a">15:00</li><li class="t_b"><span style="margin-left:-18px;">15:30</span></li>
+			<li class="t_a">16:00</li><li class="t_b"><span style="margin-left:-18px;">16:30</span></li>
+			<li class="t_a">17:00</li><li class="t_b"><span style="margin-left:-18px;">17:30</span></li>
+			<li class="t_a" style="border-bottom: 0;">18:00</li>
 		</ul>
 		<table id="meettingRoom">
 			<tr>
-				<th style="width: 129px;"><span style="padding-left: 8px;">会议室1</span></th>
+				<th style="width: 105px;"><span>会议室1</span></th>
 				<td></td><td></td>
 				<td></td><td></td>
 				<td class="selected" id="txt"></td><td></td>
@@ -192,7 +197,7 @@ $(function() {
 				<td></td><td></td>
 			</tr>
 			<tr>
-				<th style="width: 129px;"><span style="padding-left: 8px;">会议室2</span></th>
+				<th style="width: 105px;"><span>会议室2</span></th>
 				<td></td><td></td>
 				<td></td><td></td>
 				<td class="selected" colspan="3"></td>
@@ -204,7 +209,7 @@ $(function() {
 				<td></td><td></td>
 			</tr>
 			<tr>
-				<th style="width: 129px;"><span style="padding-left: 8px;">会议室3</span></th>
+				<th style="width: 105px;"><span>会议室3</span></th>
 				<td></td><td></td>
 				<td></td><td></td>
 				<td class="selected"></td><td></td>
