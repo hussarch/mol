@@ -7,6 +7,6 @@ package com.hussar.app.mol.model;
  */
 public class MeetingParticipantEntity {
 	
-	private MassageBookingEntity 
+	private MassageBookingEntity entity;
 	
 }
