@@ -138,13 +138,26 @@ $(function() {
         $("#leo").remove();  
     });  
     
+    var map = new Map();
     
     $("#meettingRoom tbody tr td").each(function(){
     	$(this).click(function(){
-    		alert(this.id);
+    		var key = getKey(this);
+    		if(!map.get(key)){
+    			
+    		}else{
+    			
+    		}
+    		map.put(getKey(this), true);
+    		
+    		$(this).css({"background-color" : "#5A5AAD"});
     	});
     	
     });
+    
+    function getKey(comp){
+    	return comp.offsetLeft + "-" + comp.offsetTop;
+    }
     
     
 });
