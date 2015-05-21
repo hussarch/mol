@@ -2,8 +2,14 @@ package com.hussar.app.mol.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -19,16 +25,25 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicUpdate(true)
 public class MeetingRoomOrderEntity {
 	
+	@Column(name = "ORDER_DATE", nullable = false)
+	@Temporal(TemporalType.DATE)
 	private Date orderDate;
 	
+	@Column(name = "START_TIME_INDEX", length = 2, nullable = false)
 	private Integer startTimeIndex;
 	
+	@Column(name = "DURATION_UNIT_NUMBER", length = 2, nullable = false)
 	private Integer durationUnitNumber;
 	
+	@JoinColumn(name = "MEETING_ROOM_ID", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private MeetingRoomEntity meetingRoom;
 	
+	@JoinColumn(name = "ORDERED_BY_USER_ID", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private UserEntity orderedBy;
 	
+	@Column(name = "PARTICIPANTS_ID", length = 2, nullable = false)
 	private String participants;
 
 	public Date getOrderDate() {
