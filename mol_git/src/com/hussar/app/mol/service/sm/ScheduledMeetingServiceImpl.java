@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hussar.app.mol.dao.sm.ScheduledMeetingDao;
+import com.hussar.app.mol.model.MeetingRoomEntity;
 import com.hussar.app.mol.model.ScheduledMeetingEntity;
 
 /**
@@ -23,7 +24,6 @@ public class ScheduledMeetingServiceImpl implements ScheduledMeetingService {
     
     @Autowired
     private ScheduledMeetingDao dao;
-    
     
     @Override
     public ScheduledMeetingEntity getEntity(int id) {
@@ -48,6 +48,11 @@ public class ScheduledMeetingServiceImpl implements ScheduledMeetingService {
     @Override
     public List<ScheduledMeetingEntity> getMeetingRoomList(Date orderDate) {
         return dao.getScheduledMeetingList(orderDate);
+    }
+
+    @Override
+    public boolean doesMeetingRoomBooked(MeetingRoomEntity meetingRoom) {
+        return dao.doesMeetingRoomBooked(meetingRoom);
     }
 
 }

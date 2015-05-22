@@ -18,5 +18,5 @@ public interface ScheduledMeetingDao extends GenericDao<ScheduledMeetingEntity> 
     
     List<ScheduledMeetingEntity> getScheduledMeetingList(Date date);
     void deleteByMeetingRoom(MeetingRoomEntity meetingRoom);
-    
+    boolean doesMeetingRoomBooked(MeetingRoomEntity meetingRoom);
 }

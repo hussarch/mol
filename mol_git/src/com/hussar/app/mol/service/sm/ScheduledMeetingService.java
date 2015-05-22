@@ -6,6 +6,7 @@ package com.hussar.app.mol.service.sm;
 import java.util.Date;
 import java.util.List;
 
+import com.hussar.app.mol.model.MeetingRoomEntity;
 import com.hussar.app.mol.model.ScheduledMeetingEntity;
 
 /**
@@ -19,5 +20,6 @@ public interface ScheduledMeetingService {
     void update(ScheduledMeetingEntity meeting);
     void delete(int id);
     List<ScheduledMeetingEntity> getMeetingRoomList(Date orderDate);
+    boolean doesMeetingRoomBooked(MeetingRoomEntity meetingRoom);
     
 }

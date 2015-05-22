@@ -34,4 +34,10 @@ public class ScheduledMeetingDaoImpl extends GenericDaoImpl<ScheduledMeetingEnti
         query.executeUpdate();
     }
     
+    public boolean doesMeetingRoomBooked(MeetingRoomEntity meetingRoom){
+        Query query = getCurrentSession().createQuery("from ScheduledMeetingEntity where meetingRoom = ?");
+        query.setParameter(0, meetingRoom);
+        return query.list().size() > 0;
+    }
+    
 }
