@@ -9,7 +9,8 @@ import com.hussar.framework.common.domain.PagingCountBean;
 
 /**
  * @PagingTag.java
- * @author XiaoYi(hussarch@126.com) Created on 2015-4-23, ©2015 some rights reserved
+ * @author XiaoYi(hussarch@126.com) 
+ * Created on 2015-4-23, ©2015 some rights reserved
  */
 public class PagingTag extends SimpleTagSupport {
 
@@ -18,6 +19,9 @@ public class PagingTag extends SimpleTagSupport {
 	private String condition;
 	
 	public void doTag() throws JspException, IOException {
+	    if(pagingCountBean.getTotalPageCount() == 1){
+	        return;
+	    }
 		StringBuilder builder = new StringBuilder(1000);
 		builder.append(getPageScript());
 		builder.append(getPageForm());
@@ -113,7 +117,6 @@ public class PagingTag extends SimpleTagSupport {
 		return builder.toString();
 	}
 	
-
 	public PagingCountBean getPagingCountBean() {
 		return pagingCountBean;
 	}

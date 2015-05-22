@@ -1,18 +1,23 @@
 package com.hussar.app.mol.model;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+
+import com.hussar.framework.entity.BaseEntity;
 
 /**
  * @MeetingRoomOrderEntity.java
@@ -20,10 +25,10 @@ import org.hibernate.annotations.DynamicUpdate;
  * Created on 2015-5-21, ©2015 some rights reserved
  */
 @Entity
-@Table(name = "MASSAGE_BOOKING_INFO")
+@Table(name = "SCHEDULED_MEETING")
 @DynamicInsert(true)
 @DynamicUpdate(true)
-public class MeetingRoomOrderEntity {
+public class ScheduledMeetingEntity extends BaseEntity{
 	
 	@Column(name = "ORDER_DATE", nullable = false)
 	@Temporal(TemporalType.DATE)
@@ -43,8 +48,9 @@ public class MeetingRoomOrderEntity {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private UserEntity orderedBy;
 	
-	@Column(name = "PARTICIPANTS_ID", length = 2, nullable = false)
-	private String participants;
+	@OneToMany(targetEntity = MeetingParticipantEntity.class, fetch=FetchType.EAGER, mappedBy="scheduledMeeting")
+	@Cascade(value=org.hibernate.annotations.CascadeType.ALL)
+	private Set<MeetingParticipantEntity> participantList;
 
 	public Date getOrderDate() {
 		return orderDate;
@@ -86,12 +92,12 @@ public class MeetingRoomOrderEntity {
 		this.orderedBy = orderedBy;
 	}
 
-	public String getParticipants() {
-		return participants;
-	}
+    public Set<MeetingParticipantEntity> getParticipantList() {
+        return participantList;
+    }
 
-	public void setParticipants(String participants) {
-		this.participants = participants;
-	}
+    public void setParticipantList(Set<MeetingParticipantEntity> participantList) {
+        this.participantList = participantList;
+    }
 	
 }

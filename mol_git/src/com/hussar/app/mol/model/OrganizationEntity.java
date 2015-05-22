@@ -5,6 +5,7 @@ package com.hussar.app.mol.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -43,7 +44,7 @@ public class OrganizationEntity extends BaseEntity {
 	@ManyToOne(targetEntity = OrganizationEntity.class)
 	private OrganizationEntity superOrganization;
 	
-	@OneToMany(targetEntity = OrganizationEntity.class, fetch=FetchType.EAGER, mappedBy="superOrganization")
+	@OneToMany(targetEntity = OrganizationEntity.class, fetch=FetchType.EAGER, mappedBy="superOrganization", cascade=CascadeType.REMOVE)
 	private Set<OrganizationEntity> subOrganizations;
 
 	
