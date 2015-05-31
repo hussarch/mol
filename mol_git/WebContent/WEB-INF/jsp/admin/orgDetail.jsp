@@ -65,7 +65,7 @@
 						</tr>
 						<tr>
 							<td align="right" style="padding-right: 38px; height: 60px;">
-                             <form:form commandName="orgInfo" action="deleteOrg.do">
+                             <form:form commandName="orgInfo" action="deleteOrg.do" onsubmit="return confirm('确定要删除该部门信息吗？')">
                                 <form:hidden path="id"/>
 								<input type="button" class="blueButton" value="确定" onclick="window.location = '<spring:url value='/admin/orgList.do'/>'">
 								<input type="submit" class="blueButton" value="删除">

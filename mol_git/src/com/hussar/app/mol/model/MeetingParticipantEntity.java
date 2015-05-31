@@ -2,6 +2,7 @@ package com.hussar.app.mol.model;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicInsert;
@@ -21,9 +22,11 @@ import com.hussar.framework.entity.BaseEntity;
 public class MeetingParticipantEntity extends BaseEntity{
 	
     @JoinColumn(name = "SCHEDULED_MEETING_ID", nullable = false)
+    @ManyToOne
 	private ScheduledMeetingEntity scheduledMeeting;
 	
     @JoinColumn(name = "USER_ID", nullable = false)
+    @ManyToOne
 	private UserEntity participant;
 
     public ScheduledMeetingEntity getScheduledMeeting() {

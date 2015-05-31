@@ -60,6 +60,9 @@ public class ManagerController {
 	@RequestMapping(value = "/managerOperation.do", method = {RequestMethod.POST, RequestMethod.GET})
 	public String viewOrgInfo(Model model, @RequestParam(required = false) Integer id, @RequestParam(required = false) String operationType){
 		model.addAttribute( "manager", getOrganizationEntity(id));
+//		if(listPageInfo != null){
+//			session.setAttribute(PAGE_LIST_INFO, listPageInfo);
+//		}
 		if("view".equals(operationType)){
 			return "admin/managerDetail";
 		}else{

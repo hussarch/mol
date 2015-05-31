@@ -51,7 +51,7 @@ public class UserEntity extends BaseEntity {
 	private Integer extensionNumber;
 	
 	@JoinColumn(name = "ORGANIZATION_ID", nullable = true)
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private OrganizationEntity organization;
 	
 	@Column(name="POSITION", length=64, nullable=true)

@@ -41,14 +41,14 @@ public class ScheduledMeetingEntity extends BaseEntity{
 	private Integer durationUnitNumber;
 	
 	@JoinColumn(name = "MEETING_ROOM_ID", nullable = false)
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private MeetingRoomEntity meetingRoom;
 	
 	@JoinColumn(name = "ORDERED_BY_USER_ID", nullable = false)
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private UserEntity orderedBy;
 	
-	@OneToMany(targetEntity = MeetingParticipantEntity.class, fetch=FetchType.EAGER, mappedBy="scheduledMeeting")
+	@OneToMany(targetEntity = MeetingParticipantEntity.class, fetch=FetchType.LAZY, mappedBy="scheduledMeeting")
 	@Cascade(value=org.hibernate.annotations.CascadeType.ALL)
 	private Set<MeetingParticipantEntity> participantList;
 

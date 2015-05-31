@@ -33,11 +33,11 @@ public class ManagerEntity extends BaseEntity{
 	private String type;
 	
 	@JoinColumn(name = "USER_ID", nullable = false)
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private UserEntity user;
 	
 	@JoinColumn(name = "SUPER_MANAGER_ID", nullable = true)
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private ManagerEntity superManager;
 	
 	public String getFullTitle(){

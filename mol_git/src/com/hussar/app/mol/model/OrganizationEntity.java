@@ -44,7 +44,7 @@ public class OrganizationEntity extends BaseEntity {
 	@ManyToOne(targetEntity = OrganizationEntity.class)
 	private OrganizationEntity superOrganization;
 	
-	@OneToMany(targetEntity = OrganizationEntity.class, fetch=FetchType.EAGER, mappedBy="superOrganization", cascade=CascadeType.REMOVE)
+	@OneToMany(targetEntity = OrganizationEntity.class, fetch=FetchType.LAZY, mappedBy="superOrganization", cascade=CascadeType.REMOVE)
 	private Set<OrganizationEntity> subOrganizations;
 
 	
