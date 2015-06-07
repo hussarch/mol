@@ -24,6 +24,7 @@
      </filter-class> 
  </filter>
 
+
   <filter-mapping>
     <filter-name>CharacterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>

@@ -106,6 +106,7 @@ public class GenericDaoImpl<T extends BaseEntity> implements GenericDao<T> {
 		return query.list();
 	}
 	
+	
 	//http://blog.csdn.net/houpengfei111/article/details/9468389
 	protected Session getCurrentSession() {
 		return sessionFactory.getCurrentSession();
