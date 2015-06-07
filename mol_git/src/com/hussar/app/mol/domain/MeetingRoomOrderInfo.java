@@ -1,5 +1,6 @@
 package com.hussar.app.mol.domain;
 
+
 /**
  * @MeetingRoomOrderInfo.java
  * @author XiaoYi(hussarch@126.com) Created on 2015-6-7, ©2015 some rights reserved
