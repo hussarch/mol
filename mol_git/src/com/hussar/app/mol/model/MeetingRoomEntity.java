@@ -1,6 +1,6 @@
 package com.hussar.app.mol.model;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,7 +37,7 @@ public class MeetingRoomEntity extends BaseEntity{
 	private Integer seatNumber;
 	
 	@OneToMany(targetEntity = ScheduledMeetingEntity.class, fetch=FetchType.LAZY, mappedBy="meetingRoom")
-	private Set<ScheduledMeetingEntity> scheduledMeetingList;
+	private List<ScheduledMeetingEntity> scheduledMeetingList;
 
 	public String getName() {
 		return name;
@@ -71,11 +71,11 @@ public class MeetingRoomEntity extends BaseEntity{
         this.seatNumber = seatNumber;
     }
 
-    public Set<ScheduledMeetingEntity> getScheduledMeetingList() {
+    public List<ScheduledMeetingEntity> getScheduledMeetingList() {
         return scheduledMeetingList;
     }
 
-    public void setScheduledMeetingList(Set<ScheduledMeetingEntity> scheduledMeetingList) {
+    public void setScheduledMeetingList(List<ScheduledMeetingEntity> scheduledMeetingList) {
         this.scheduledMeetingList = scheduledMeetingList;
     }
 	
