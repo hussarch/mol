@@ -8,13 +8,13 @@
 <head>
 <meta charset="UTF-8">
 <title>会议室预定</title>
-<link type="text/css" rel="stylesheet" href="../css/conf.setting.css">
-<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/conf.setting.css">
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.11.1.js"></script>
 <style type="text/css">
 
 .timeTitle{
 	-webkit-padding-start: 0;
-	padding-left: 106px;
+	padding-left: 111px;
 }
 
 .timeTitle li{
@@ -44,6 +44,7 @@ table{
 	border-width: 1px;
 	border-color: #666666;
 	border-collapse: collapse;
+	margin-left: 5px;
 }
 
 table td, th{
@@ -153,7 +154,7 @@ $(function() {
     		}else{
     			
     		}
-    		map.put(getKey(this), true);
+    		map.put(key, true);
     		
     		$(this).css({"background-color" : "#5A5AAD"});
     	});
@@ -161,7 +162,9 @@ $(function() {
     });
     
     function getKey(comp){
-    	return comp.offsetLeft + "-" + comp.offsetTop;
+    	
+    	return $(comp).find('input').attr('id');
+    	//return comp.offsetLeft + "-" + comp.offsetTop;
     }
     
     
@@ -214,7 +217,7 @@ $(function() {
 				<td></td><td></td>
 				<td></td><td></td>
 			</tr>
-			<c:forEach items="${magagerList}" var="item" varStatus="status"> 
+			<c:forEach items="${orderList}" var="item" varStatus="status"> 
 			<tr>
 				<th style="width: 105px;" id="tr_${item.id }"><span>${item.name }</span></th>
 				<c:out value=" ${item.tds } "  escapeXml="false" />

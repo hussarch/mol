@@ -49,7 +49,7 @@ public class OrderMeetingRoomController {
 	private MeetingRoomOrderInfo getMeetingRoomOrderInfo(MeetingRoomEntity entity) {
 		MeetingRoomOrderInfo info = new MeetingRoomOrderInfo();
 		info.setId(entity.getId());
-		info.setName(entity.getZhName() + "/n" + entity.getLocation());
+		info.setName(entity.getZhName() + "(" + entity.getLocation() + ")");
 		info.setTds(getTds(entity.getScheduledMeetingList()));
 		return info;
 	}
@@ -57,7 +57,7 @@ public class OrderMeetingRoomController {
 	private String getTds(List<ScheduledMeetingEntity> scheduledMeetingList) {
 		StringBuilder tds = new StringBuilder();
 		int j = 0;
-		for(int i = 0; i < 19; i++){
+		for(int i = 0; i < 18; i++){
 			if(j < scheduledMeetingList.size()){
 				ScheduledMeetingEntity entity = scheduledMeetingList.get(j);
 				int startIndex = entity.getStartTimeIndex();

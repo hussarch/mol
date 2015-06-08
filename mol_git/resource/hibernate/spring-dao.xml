@@ -47,6 +47,7 @@
 				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>  
 				<prop key="current_session_context_class">thread</prop>    
 				<prop key="hibernate.hbm2ddl.auto">update</prop>  
+				<prop key="jdbc.use_scrollable_resultset">false</prop>
 			</props>
 		</property>
 	</bean>
