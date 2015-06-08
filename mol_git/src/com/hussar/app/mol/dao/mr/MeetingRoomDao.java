@@ -11,5 +11,8 @@ import com.hussar.framework.dao.GenericDao;
  *
  */
 public interface MeetingRoomDao  extends GenericDao<MeetingRoomEntity> {
-
+	
+	
+	//List<MeetingRoomEntity> getMeetingRoomList();
+	
 }

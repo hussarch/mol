@@ -17,6 +17,14 @@
     <filter-name>loginFilter</filter-name>
     <filter-class>com.hussar.app.common.filter.LoginFilter</filter-class>
   </filter>
+  <filter> 
+     <filter-name>hibernateFilter</filter-name> 
+     <filter-class> 
+     org.springframework.orm.hibernate3.support.OpenSessionInViewFilter 
+     </filter-class> 
+ </filter>
+
+
   <filter-mapping>
     <filter-name>CharacterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
@@ -25,6 +33,10 @@
     <filter-name>loginFilter</filter-name>
     <url-pattern>/no*</url-pattern>
   </filter-mapping>
+  <filter-mapping> 
+     <filter-name>hibernateFilter</filter-name> 
+     <url-pattern>*.do</url-pattern> 
+ </filter-mapping> 
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath*:spring/spring-base.xml</param-value>

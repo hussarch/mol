@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %> 
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>会议室预定</title>
@@ -210,31 +214,12 @@ $(function() {
 				<td></td><td></td>
 				<td></td><td></td>
 			</tr>
+			<c:forEach items="${magagerList}" var="item" varStatus="status"> 
 			<tr>
-				<th style="width: 105px;"><span>会议室2</span></th>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td class="selected" colspan="3"></td>
-				<td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
+				<th style="width: 105px;" id="tr_${item.id }"><span>${item.name }</span></th>
+				<c:out value=" ${item.tds } "  escapeXml="false" />
 			</tr>
-			<tr>
-				<th style="width: 105px;"><span>会议室3</span></th>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td class="selected"></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-			</tr>
-		
+			</c:forEach>
 		</table>
 	</section>
 	
