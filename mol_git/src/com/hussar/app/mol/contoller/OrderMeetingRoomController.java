@@ -50,11 +50,12 @@ public class OrderMeetingRoomController {
 		MeetingRoomOrderInfo info = new MeetingRoomOrderInfo();
 		info.setId(entity.getId());
 		info.setName(entity.getZhName() + "(" + entity.getLocation() + ")");
-		info.setTds(getTds(entity.getScheduledMeetingList()));
+		info.setTds(getTds(entity));
 		return info;
 	}
 
-	private String getTds(List<ScheduledMeetingEntity> scheduledMeetingList) {
+	private String getTds(MeetingRoomEntity roomEntity) {
+		List<ScheduledMeetingEntity> scheduledMeetingList = roomEntity.getScheduledMeetingList();
 		StringBuilder tds = new StringBuilder();
 		int j = 0;
 		for(int i = 0; i < 18; i++){
@@ -67,23 +68,23 @@ public class OrderMeetingRoomController {
 					if(colspanSize > 1){
 						tds.append("colspan=\"").append(colspanSize).append("\">");
 					}
-					tds.append(getInnerHtml(i, colspanSize));
+					tds.append(getInnerHtml(roomEntity.getId(), i, colspanSize));
 					tds.append("</td>");
 					j++;
 					continue;
 				}
 			}
 			tds.append("<td>");
-			tds.append(getInnerHtml(i, 1));
+			tds.append(getInnerHtml(roomEntity.getId(), i, 1));
 			tds.append("</td>");
 		}
 		return tds.toString();
 	}
 	
-	private String getInnerHtml(int index, int value){
+	private String getInnerHtml(int roomId, int index, int value){
 		StringBuilder input = new StringBuilder();
-		input.append("<input type=\"hidden\" id=\"td_").append(index).append("\" value=\"")
-		   .append(index).append("_").append(value).append("\">");
+		input.append("<input type=\"hidden\" id=\"td_").append(roomId).append("-").append(index).append("\" value=\'roomId\':")
+		   .append(roomId).append(",'timeIndex':").append(index).append(",'duration':").append(value).append("\">");
 		return input.toString();
 	}
 	
