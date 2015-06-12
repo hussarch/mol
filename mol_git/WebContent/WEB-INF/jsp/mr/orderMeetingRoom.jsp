@@ -165,10 +165,12 @@ $(function() {
     	if(array.length > 0){
     		int len = array.length;
     		for(var i =0; i < len; i++){
-    			
+    			if(array[i] == timeIndex){
+    				return true;
+    			}
     		}
     	}
-    	return orderedRoomInfo[roomId][timeIndex] != n
+    	return false;
     }
     
 });
