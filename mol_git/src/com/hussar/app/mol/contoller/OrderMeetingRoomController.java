@@ -3,6 +3,7 @@ package com.hussar.app.mol.contoller;
 import java.util.ArrayList;
 import java.util.List;
  
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,15 +30,16 @@ public class OrderMeetingRoomController {
 	
 	@RequestMapping(value = "/list.do", method = {RequestMethod.POST, RequestMethod.GET})
 	public String getOrderList(Model model, @RequestParam(required = false) String msg){
-		List<MeetingRoomOrderInfo> list = getMeetingRoomOrderInfoList(meetingRoomService.getMeetingRoomList());
-		if(list.size() > 0){
-			model.addAttribute("orderList", list);
+	    List<MeetingRoomEntity> roomList = meetingRoomService.getMeetingRoomList();
+		if(roomList.size() > 0){
+			model.addAttribute("orderList", getMeetingRoomOrderInfoList(roomList));
+			model.addAttribute("orderedRoomArray", getOrdered(roomList));
 		}else{
 			model.addAttribute("msg", "请先添加会议室");
 		}
 		return "mr/orderMeetingRoom";
 	}
-
+	
 	private List<MeetingRoomOrderInfo> getMeetingRoomOrderInfoList(List<MeetingRoomEntity> meetingRoomList) {
 		List<MeetingRoomOrderInfo> list = new ArrayList<MeetingRoomOrderInfo>();
 		for(MeetingRoomEntity entity : meetingRoomList){
@@ -83,10 +85,40 @@ public class OrderMeetingRoomController {
 	
 	private String getInnerHtml(int roomId, int index, int value){
 		StringBuilder input = new StringBuilder();
-		input.append("<input type=\"hidden\" id=\"td_").append(roomId).append("-").append(index).append("\" value=\'roomId\':")
-		   .append(roomId).append(",'timeIndex':").append(index).append(",'duration':").append(value).append("\">");
+		input.append("<input type=\"hidden\" id=\"td_").append(roomId).append("-").append(index).append("\" value=\"({'roomId':")
+		   .append(roomId).append(",'timeIndex':").append(index).append(",'duration':").append(value).append("})\">");
 		return input.toString();
 	}
+	
+	private String getOrdered(List<MeetingRoomEntity> meetingRoomList){
+	    StringBuilder builder = new StringBuilder();
+	    builder.append("{");
+	    for(MeetingRoomEntity room : meetingRoomList){
+	        builder.append(room.getId()).append(":[").append(getOrdered(room)).append("],");
+	    }
+	    builder.append("}");
+	    return builder.toString();
+	}
+
+    private String getOrdered(MeetingRoomEntity room) {
+        StringBuilder builder = new StringBuilder();
+        List<ScheduledMeetingEntity> list = room.getScheduledMeetingList();
+        if(list != null){
+            for(ScheduledMeetingEntity item : list){
+                if(builder.length() > 0){
+                    builder.append(",");
+                }
+                builder.append(item.getStartTimeIndex());
+                int i = 1;
+                while(i < item.getDurationUnitNumber()){
+                    builder.append(",");
+                    builder.append(item.getStartTimeIndex() + i);
+                    i++;
+                }
+            }
+        }
+        return builder.toString();
+    }
 	
 	
 }

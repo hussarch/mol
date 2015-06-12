@@ -144,34 +144,37 @@ $(function() {
         $("#leo").remove();  
     });  
     
-    var map = new Map();
     
     $("#meettingRoom tbody tr td").each(function(){
     	$(this).click(function(){
-    		var key = getKey(this);
-    		if(!map.get(key)){
-    			
-    		}else{
-    			
-    		}
-    		map.put(key, true);
+    		var map = eval(getHiddenInputValue(this));
+    		
     		
     		$(this).css({"background-color" : "#5A5AAD"});
     	});
     	
     });
     
-    function getKey(comp){
-    	
-    	return $(comp).find('input').attr('id');
-    	//return comp.offsetLeft + "-" + comp.offsetTop;
+    function getHiddenInputValue(td){
+    	return $(td).find('input').attr('value');
     }
     
+    //'roomId':2,'timeIndex':14,'duration':1
+    function isInUse(roomId, timeIndex){
+    	var array = orderedRoomInfo[roomId];
+    	if(array.length > 0){
+    		int len = array.length;
+    		for(var i =0; i < len; i++){
+    			
+    		}
+    	}
+    	return orderedRoomInfo[roomId][timeIndex] != n
+    }
     
 });
 
-
-
+var orderedRoomInfo = ${orderedRoomArray};
+var newSetOrder = new Map();
 	
 </script>
 
@@ -218,9 +221,9 @@ $(function() {
 				<td></td><td></td>
 			</tr>
 			<c:forEach items="${orderList}" var="item" varStatus="status"> 
-			<tr>
-				<th style="width: 105px;" id="tr_${item.id }"><span>${item.name }</span></th>
-				<c:out value=" ${item.tds } "  escapeXml="false" />
+			<tr id="tr_${item.id }">
+				<th style="width: 105px;"><span>${item.name }</span></th>
+				<c:out value="${item.tds }"  escapeXml="false" />
 			</tr>
 			</c:forEach>
 		</table>
