@@ -148,22 +148,52 @@ $(function() {
     $("#meettingRoom tbody tr td").each(function(){
     	$(this).click(function(){
     		var map = eval(getHiddenInputValue(this));
-    		
-    		
-    		$(this).css({"background-color" : "#5A5AAD"});
+    		var roomId = map["roomId"];
+    		var timeIndex = map["timeIndex"];
+    		if(!isInUse(roomId, timeIndex)){
+    			if(!selectedRoomId){
+    				selectedRoomId = roomId;
+    				setSelected(roomId, timeIndex);
+    			}else{
+    				if(roomId != selectedRoomId){
+    					return;
+    				}else{
+    					if(isSelectedTd(timeIndex)){
+							releaseSelected(roomId, timeIndex);   						
+    					}else{
+    						setSelected(roomId, timeIndex);
+    					}
+    				}
+    			}
+    		}
     	});
-    	
     });
+    
+    
+    
     
     function getHiddenInputValue(td){
     	return $(td).find('input').attr('value');
     }
     
-    //'roomId':2,'timeIndex':14,'duration':1
+    // 'roomId':2,'timeIndex':14,'duration':1
     function isInUse(roomId, timeIndex){
     	var array = orderedRoomInfo[roomId];
     	if(array.length > 0){
-    		int len = array.length;
+    		var len = array.length;
+    		for(var i =0; i < len; i++){
+    			if(array[i] == timeIndex){
+    				return true;
+    			}
+    		}
+    	}
+    	return false;
+    }
+    
+    function isNewSelected(roomId, timeIndex){
+    	var array = newSetOrder[roomId];
+    	if(array != null && array.length > 0){
+    		var len = array.length;
     		for(var i =0; i < len; i++){
     			if(array[i] == timeIndex){
     				return true;
@@ -176,8 +206,72 @@ $(function() {
 });
 
 var orderedRoomInfo = ${orderedRoomArray};
-var newSetOrder = new Map();
-	
+
+var selectedRoomId;
+
+var selectedTdArray = new Array();
+
+function isSelectedTd(val){
+	if(selectedTdArray.length > 0){
+		for(var i = 0; i < selectedTdArray.length; i++){
+			if(selectedTdArray[i] == val){
+				return true;
+			}
+		}
+		return false;
+	}
+}
+
+function setSelected(roomId, val){
+	if(selectedTdArray.length > 0){
+		var start = selectedTdArray[0];
+		var end = selectedTdArray[selectedTdArray.length - 1];
+		if(val < start){
+			for(var i = start - 1; i >= val; i--){
+				selectedTdArray.unshift(i);
+			}
+		}else if(val > end){
+			for(var i = end + 1; i <= val; i++){
+				selectedTdArray.push(i);
+			}
+		}
+	}else{
+		selectedTdArray.push(val);
+	}
+	setBackgroundColor(roomId, selectedTdArray[0], selectedTdArray[selectedTdArray.length - 1], "#5A5AAD");
+}
+
+function releaseSelected(roomId, val){
+	var start = selectedTdArray[0];
+	var end = selectedTdArray[selectedTdArray.length - 1];
+	if(start == val){
+		selectedTdArray.shift();
+		setBackgroundColor(roomId, start, start, "#FFFFFF");
+	}else if(end == val){
+		selectedTdArray.pop();
+		setBackgroundColor(roomId, end, end, "#FFFFFF");
+	}else{
+		
+		selectedTdArray = selectedTdArray.slice(0, val + 1 - start);
+		setBackgroundColor(roomId, val + 1, end, "#FFFFFF");
+		setBackgroundColor(roomId, selectedTdArray[0], selectedTdArray[selectedTdArray.length - 1], "#5A5AAD");
+	}
+	if(selectedTdArray.length == 0){
+		selectedRoomId = null;
+	}
+}
+
+
+function setBackgroundColor(roomId, start, end, color){
+	for(var i = start; i <= end; i++){
+		getTd(roomId, i).css({"background-color" : color});
+	}
+}
+
+function getTd(roomId, timeIndex){
+	return $("#td_" + roomId + "-" + timeIndex).parent();
+}
+
 </script>
 
 </head>
@@ -226,6 +320,7 @@ var newSetOrder = new Map();
 			<tr id="tr_${item.id }">
 				<th style="width: 105px;"><span>${item.name }</span></th>
 				<c:out value="${item.tds }"  escapeXml="false" />
+				<td style="width: 44px;" align="center"><span style="font-size: 12px; border: 1px solid #3D32;"><a id="yd_${item.id}">预定</a></span></td>
 			</tr>
 			</c:forEach>
 		</table>
