@@ -61,6 +61,27 @@ table td:HOVER{
 	background: #CAFF70;
 }
 
+table td a:link{
+	text-decoration: none;
+	color: #426ab3;
+}
+
+table td a:hover{
+	text-decoration: none;
+	color: #faa755;
+}
+
+table td a:visited{
+	text-decoration: none;
+	color: #426ab3;
+}
+
+table td a:active{
+	text-decoration: none;
+	color: #7fb80e;
+}
+
+
 .selected{
 	background-color: #EEEE00;
 	border-radius: 3px;
@@ -148,6 +169,9 @@ $(function() {
     $("#meettingRoom tbody tr td").each(function(){
     	$(this).click(function(){
     		var map = eval(getHiddenInputValue(this));
+    		if(!map){
+    			return;
+    		}
     		var roomId = map["roomId"];
     		var timeIndex = map["timeIndex"];
     		if(!isInUse(roomId, timeIndex)){
@@ -304,23 +328,11 @@ function getTd(roomId, timeIndex){
 			<li class="t_a" style="border-bottom: 0;">18:00</li>
 		</ul>
 		<table id="meettingRoom">
-			<tr>
-				<th style="width: 105px;"><span>会议室1</span></th>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td class="selected" id="txt"></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-				<td></td><td></td>
-			</tr>
 			<c:forEach items="${orderList}" var="item" varStatus="status"> 
 			<tr id="tr_${item.id }">
 				<th style="width: 105px;"><span>${item.name }</span></th>
 				<c:out value="${item.tds }"  escapeXml="false" />
-				<td style="width: 44px;" align="center"><span style="font-size: 12px; border: 1px solid #3D32;"><a id="yd_${item.id}">预定</a></span></td>
+				<td onmousemove="this.style.backgroundColor='#FFF';" style="width: 44px;" align="center"><span style="font-size: 12px; border: 1px solid #3D32;"><a id="yd_${item.id}" href="#">预定</a></span></td>
 			</tr>
 			</c:forEach>
 		</table>
