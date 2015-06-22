@@ -178,6 +178,7 @@ $(function() {
     			if(!selectedRoomId){
     				selectedRoomId = roomId;
     				setSelected(roomId, timeIndex);
+    				showOrderButton(null, roomId);
     			}else{
     				if(roomId != selectedRoomId){
     					return;
@@ -275,12 +276,12 @@ function releaseSelected(roomId, val){
 		selectedTdArray.pop();
 		setBackgroundColor(roomId, end, end, "#FFFFFF");
 	}else{
-		
 		selectedTdArray = selectedTdArray.slice(0, val + 1 - start);
 		setBackgroundColor(roomId, val + 1, end, "#FFFFFF");
 		setBackgroundColor(roomId, selectedTdArray[0], selectedTdArray[selectedTdArray.length - 1], "#5A5AAD");
 	}
 	if(selectedTdArray.length == 0){
+		showOrderButton(selectedRoomId);
 		selectedRoomId = null;
 	}
 }
@@ -296,10 +297,32 @@ function getTd(roomId, timeIndex){
 	return $("#td_" + roomId + "-" + timeIndex).parent();
 }
 
+function showOrderButton(oldOrderIndex, newOrderIndex){
+	if(oldOrderIndex){
+		$("#order_" + oldOrderIndex).hide();
+	}
+	if(newOrderIndex){
+		$("#order_" + newOrderIndex).show();
+	}
+}
+
+function setOrder(){
+	$("#setRoomId").val(selectedRoomId);
+	$("#setStartIndex").val(selectedTdArray[0]);
+	$("#setDurationUnitNumber").val(selectedTdArray.length);
+	$("#orderForm").submit();
+}
+
 </script>
 
 </head>
 <body>
+	<form:form commandName="scheduledMeeting" action="order.do" id="orderForm">
+		<input type="hidden" id="setRoomId" name="roomId">
+		<form:hidden path="orderDate"/>
+		<form:hidden id="setStartIndex" path="startTimeIndex"/>
+		<form:hidden id="setDurationUnitNumber" path="durationUnitNumber"/>
+	</form:form>
 	<section style="width: 1080px; margin: 80px auto 0; padding: 0;">
 		<ul class="dayTitle">
 			<li>周一</li>
@@ -332,7 +355,11 @@ function getTd(roomId, timeIndex){
 			<tr id="tr_${item.id }">
 				<th style="width: 105px;"><span>${item.name }</span></th>
 				<c:out value="${item.tds }"  escapeXml="false" />
-				<td onmousemove="this.style.backgroundColor='#FFF';" style="width: 44px;" align="center"><span style="font-size: 12px; border: 1px solid #3D32;"><a id="yd_${item.id}" href="#">预定</a></span></td>
+				<td onmousemove="this.style.backgroundColor='#FFF';" style="width: 44px;" align="center">
+					<span style="font-size: 12px; border: 1px solid #3D32;">
+						<a id="order_${item.id}" href="#" style="display: none;" onclick="setOrder();">预定</a>
+					</span>
+				</td>
 			</tr>
 			</c:forEach>
 		</table>

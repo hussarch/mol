@@ -1,6 +1,7 @@
 package com.hussar.app.mol.contoller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
  
 
@@ -34,6 +35,9 @@ public class OrderMeetingRoomController {
 		if(roomList.size() > 0){
 			model.addAttribute("orderList", getMeetingRoomOrderInfoList(roomList));
 			model.addAttribute("orderedRoomArray", getOrdered(roomList));
+			ScheduledMeetingEntity scheduledMeeting = new ScheduledMeetingEntity();
+			scheduledMeeting.setOrderDate(new Date());
+			model.addAttribute("scheduledMeeting", scheduledMeeting);
 		}else{
 			model.addAttribute("msg", "请先添加会议室");
 		}
@@ -120,5 +124,13 @@ public class OrderMeetingRoomController {
         return builder.toString();
     }
 	
+    @RequestMapping(value = "/order.do", method = {RequestMethod.POST})
+	public String startOrder(Model model, @RequestParam(required = true) ScheduledMeetingEntity scheduledMeeting,  @RequestParam(required = true)Integer roomId){
+    	scheduledMeeting.setMeetingRoom(meetingRoomService.getEntity(roomId));
+    	model.addAttribute("scheduledMeeting", scheduledMeeting);
+    	return "";
+    }
+    
+    
 	
 }
