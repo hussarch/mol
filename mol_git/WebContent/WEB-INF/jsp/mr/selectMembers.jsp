@@ -7,7 +7,13 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.11.1.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/tree/style.min.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/list.css">
-<script src="<%=request.getContextPath()%>/js/tree/jquery.js"></script>
+<script src="<%=request.getContextPath()%>/js/tree/jstree.js"></script>
+
+<script type="text/javascript">
+
+	
+</script>
+
 </head>
 <body>
 	<jsp:include page="../common/menu.jsp" flush="true">
@@ -15,7 +21,8 @@
 		<jsp:param value="1110" name="width"/>
 	</jsp:include>
 	<section>
-		 <div id="jstree_demo_div"></div>
+		 <div id="jstree_members"></div>
+		 <div></div>
 	</section>
 	<jsp:include page="../common/footer.jsp" flush="true"/>
 </body>
