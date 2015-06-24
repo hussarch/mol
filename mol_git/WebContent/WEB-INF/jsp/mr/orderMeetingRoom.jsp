@@ -317,7 +317,7 @@ function setOrder(){
 
 </head>
 <body>
-	<form:form commandName="scheduledMeeting" action="order.do" id="orderForm">
+	<form:form commandName="scheduledMeeting" action="order.do" method="post" id="orderForm">
 		<input type="hidden" id="setRoomId" name="roomId">
 		<form:hidden path="orderDate"/>
 		<form:hidden id="setStartIndex" path="startTimeIndex"/>

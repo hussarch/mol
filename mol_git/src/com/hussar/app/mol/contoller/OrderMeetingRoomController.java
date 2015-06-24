@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -125,10 +126,10 @@ public class OrderMeetingRoomController {
     }
 	
     @RequestMapping(value = "/order.do", method = {RequestMethod.POST})
-	public String startOrder(Model model, @RequestParam(required = true) ScheduledMeetingEntity scheduledMeeting,  @RequestParam(required = true)Integer roomId){
+	public String startOrder(Model model, @ModelAttribute("scheduledMeeting")ScheduledMeetingEntity scheduledMeeting,  @RequestParam(required = true)Integer roomId){
     	scheduledMeeting.setMeetingRoom(meetingRoomService.getEntity(roomId));
     	model.addAttribute("scheduledMeeting", scheduledMeeting);
-    	return "";
+    	return "mr/selectMembers";
     }
     
     

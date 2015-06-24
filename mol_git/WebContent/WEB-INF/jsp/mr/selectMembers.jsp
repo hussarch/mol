@@ -10,7 +10,22 @@
 <script src="<%=request.getContextPath()%>/js/tree/jstree.js"></script>
 
 <script type="text/javascript">
-
+$('#jstree_members').jstree({ 'core' : {
+    'data' : [
+       'Simple root node',
+       {
+         'text' : 'Root node 2',
+         'state' : {
+           'opened' : true,
+           'selected' : true
+         },
+         'children' : [
+           { 'text' : 'Child 1' },
+           'Child 2'
+         ]
+      }
+    ]
+} });
 	
 </script>
 
