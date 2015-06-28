@@ -3,7 +3,6 @@ package com.hussar.app.mol.contoller;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
- 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -129,9 +128,8 @@ public class OrderMeetingRoomController {
 	public String startOrder(Model model, @ModelAttribute("scheduledMeeting")ScheduledMeetingEntity scheduledMeeting,  @RequestParam(required = true)Integer roomId){
     	scheduledMeeting.setMeetingRoom(meetingRoomService.getEntity(roomId));
     	model.addAttribute("scheduledMeeting", scheduledMeeting);
+    	model.addAttribute("selectMemberData", meetingRoomService.getRootMemberNode().toJson());
     	return "mr/selectMembers";
     }
     
-    
-	
 }

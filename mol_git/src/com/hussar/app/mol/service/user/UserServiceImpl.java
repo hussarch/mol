@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hussar.app.mol.dao.user.UserDao;
+import com.hussar.app.mol.model.OrganizationEntity;
 import com.hussar.app.mol.model.RoleType;
 import com.hussar.app.mol.model.UserEntity;
 import com.hussar.framework.common.domain.PagingCountBean;
@@ -104,6 +105,11 @@ public class UserServiceImpl implements UserService {
 	public PagingCountBean getPagingCountBean(String condition, int currentPage, int pageSize) {
 		int totalRecordCount = userDao.queryCount(getQueryCondition(condition));
 		return new PagingCountBean(totalRecordCount, currentPage, pageSize);
+	}
+
+	@Override
+	public List<UserEntity> getUserEntityList(OrganizationEntity org) {
+		return userDao.getUserEntityList(org);
 	}
 
 }

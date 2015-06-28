@@ -75,18 +75,6 @@ public class UserEntity extends BaseEntity {
 	@Temporal(TemporalType.DATE)
 	private Date joinDate;
 	
-	public boolean equals(Object obj){
-		if(this == obj){
-			return true;
-		}
-		if(obj != null && this.getClass().equals(obj.getClass())){
-			UserEntity entity = (UserEntity)obj;
-			return isEquals(this.getId(), entity.getId());
-		}else{
-			return false;
-		}
-	}
-	
 	public String getTitle(){
 		if(RoleType.admin.equals(this.role)){
 			return name + "(管理员)";
@@ -208,6 +196,103 @@ public class UserEntity extends BaseEntity {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((employeeId == null) ? 0 : employeeId.hashCode());
+		result = prime * result + ((englishName == null) ? 0 : englishName.hashCode());
+		result = prime * result + ((extensionNumber == null) ? 0 : extensionNumber.hashCode());
+		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
+		result = prime * result + ((joinDate == null) ? 0 : joinDate.hashCode());
+		result = prime * result + ((location == null) ? 0 : location.hashCode());
+		result = prime * result + ((mobileNumber == null) ? 0 : mobileNumber.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((organization == null) ? 0 : organization.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((position == null) ? 0 : position.hashCode());
+		result = prime * result + ((role == null) ? 0 : role.hashCode());
+		result = prime * result + ((skypeId == null) ? 0 : skypeId.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UserEntity other = (UserEntity) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (employeeId == null) {
+			if (other.employeeId != null)
+				return false;
+		} else if (!employeeId.equals(other.employeeId))
+			return false;
+		if (englishName == null) {
+			if (other.englishName != null)
+				return false;
+		} else if (!englishName.equals(other.englishName))
+			return false;
+		if (extensionNumber == null) {
+			if (other.extensionNumber != null)
+				return false;
+		} else if (!extensionNumber.equals(other.extensionNumber))
+			return false;
+		if (gender != other.gender)
+			return false;
+		if (joinDate == null) {
+			if (other.joinDate != null)
+				return false;
+		} else if (!joinDate.equals(other.joinDate))
+			return false;
+		if (location == null) {
+			if (other.location != null)
+				return false;
+		} else if (!location.equals(other.location))
+			return false;
+		if (mobileNumber == null) {
+			if (other.mobileNumber != null)
+				return false;
+		} else if (!mobileNumber.equals(other.mobileNumber))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (organization == null) {
+			if (other.organization != null)
+				return false;
+		} else if (!organization.equals(other.organization))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (position == null) {
+			if (other.position != null)
+				return false;
+		} else if (!position.equals(other.position))
+			return false;
+		if (role != other.role)
+			return false;
+		if (skypeId == null) {
+			if (other.skypeId != null)
+				return false;
+		} else if (!skypeId.equals(other.skypeId))
+			return false;
+		return true;
 	}
 
 }

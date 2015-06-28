@@ -2,6 +2,7 @@ package com.hussar.app.mol.service.user;
 
 import java.util.List;
 
+import com.hussar.app.mol.model.OrganizationEntity;
 import com.hussar.app.mol.model.UserEntity;
 import com.hussar.framework.common.domain.PagingCountBean;
 
@@ -20,4 +21,6 @@ public interface UserService {
 	boolean checkExist(String fieldName, Class<?> clazz, Object value, Integer id);
 	List<UserEntity> getUserEntityList(String condition, int page, int pageSize);
 	PagingCountBean getPagingCountBean(String condition, int currentPage, int pageSize);
+	
+	List<UserEntity> getUserEntityList(OrganizationEntity org);
 }

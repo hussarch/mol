@@ -6,6 +6,7 @@ import org.apache.commons.lang.StringUtils;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
+import com.hussar.app.mol.model.OrganizationEntity;
 import com.hussar.app.mol.model.UserEntity;
 import com.hussar.framework.dao.GenericDaoImpl;
 
@@ -44,6 +45,19 @@ public class UserDaoImpl extends GenericDaoImpl<UserEntity> implements UserDao {
 			}
 		}
 		return -1;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UserEntity> getUserEntityList(OrganizationEntity org) {
+		Query query = null;
+		if(org == null){
+			query = getCurrentSession().createQuery("from UserEntity where organization is null");
+		}else{
+			query = getCurrentSession().createQuery("from UserEntity where organization = ?");
+			query.setParameter(0, org);
+		}
+		return query.list();
 	}
 
 }

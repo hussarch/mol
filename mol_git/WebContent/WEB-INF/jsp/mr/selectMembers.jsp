@@ -5,27 +5,19 @@
 <meta charset="UTF-8">
 <title>选择与会人员</title>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.11.1.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/tree/style.min.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/tree/style.min.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/list.css">
 <script src="<%=request.getContextPath()%>/js/tree/jstree.js"></script>
 
 <script type="text/javascript">
-$('#jstree_members').jstree({ 'core' : {
-    'data' : [
-       'Simple root node',
-       {
-         'text' : 'Root node 2',
-         'state' : {
-           'opened' : true,
-           'selected' : true
-         },
-         'children' : [
-           { 'text' : 'Child 1' },
-           'Child 2'
-         ]
-      }
-    ]
-} });
+$(function () {
+	$('#jstree_members').jstree({ 'core' : {
+	    'data' : [
+	       ${selectMemberData}
+	    ]
+	} });
+});
+
 	
 </script>
 

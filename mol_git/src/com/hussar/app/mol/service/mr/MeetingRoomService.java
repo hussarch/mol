@@ -5,6 +5,7 @@ package com.hussar.app.mol.service.mr;
 
 import java.util.List;
 
+import com.hussar.app.mol.domain.MemberNode;
 import com.hussar.app.mol.model.MeetingRoomEntity;
 import com.hussar.framework.common.domain.PagingCountBean;
 
@@ -23,4 +24,6 @@ public interface MeetingRoomService {
     List<MeetingRoomEntity> getMeetingRoomList();
     List<MeetingRoomEntity> getMeetingRoomList(int currentPage, int pageSize);
     PagingCountBean getPagingCountBean(int currentPage, int pageSize);
+    MemberNode getRootMemberNode();
+    
 }
