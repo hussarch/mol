@@ -15,7 +15,9 @@ $(function () {
 	    'data' : [
 	       ${selectMemberData}
 	    ]
-	} });
+	},
+	"plugins" : [ "wholerow", "checkbox",  "themes", "data","search" ,"ui"]
+	});
 });
 
 	
