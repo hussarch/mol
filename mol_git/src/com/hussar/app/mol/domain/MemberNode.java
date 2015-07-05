@@ -47,6 +47,8 @@ public class MemberNode {
 		builder.append("{");
 		builder.append("'id' : ").append(this.getTid()).append(",").append(SAPERATOR);
 		builder.append("'text' : '").append(this.getName()).append("',").append(SAPERATOR);
+		builder.append("'type' : '").append(this.getType()).append("',").append(SAPERATOR);
+		builder.append("'dbId' : '").append(this.getId()).append("',").append(SAPERATOR);
 		if(children != null && children.size() > 0){
 			builder.append("'children' : [").append(SAPERATOR);
 			int size = children.size();

@@ -11,13 +11,23 @@
 
 <script type="text/javascript">
 $(function () {
-	$('#jstree_members').jstree({ 'core' : {
-	    'data' : [
-	       ${selectMemberData}
-	    ]
-	},
+	$('#jstree_members').jstree({ 
+	'core' : {
+		    'data' : [
+		       ${selectMemberData}
+		    ]
+		},
 	"plugins" : [ "wholerow", "checkbox",  "themes", "data","search" ,"ui"]
-	});
+	}
+	).on('changed.jstree', function (e, data) {
+		if(data && data.selected && data.selected.length) {
+			alert(data);
+		}else {
+			$('#data .content').hide();
+			$('#data .default').html('Select a file from the tree.').show();
+		}
+	})
+	;
 });
 
 	
