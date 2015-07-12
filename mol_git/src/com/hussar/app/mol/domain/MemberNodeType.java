@@ -7,6 +7,6 @@ package com.hussar.app.mol.domain;
  */
 public enum MemberNodeType {
 	
-	ORGANIZATION, MEMBER;
+	top, org, manager, employee_male, employee_female;
 	
 }

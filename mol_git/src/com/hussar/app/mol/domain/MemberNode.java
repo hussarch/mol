@@ -67,10 +67,12 @@ public class MemberNode {
 	
 	
 	private String getTid(){
-		if(MemberNodeType.ORGANIZATION.equals(this.type)){
+		if(MemberNodeType.top.equals(this.type) || MemberNodeType.org.equals(this.type)){
 			return "'org:" + this.getId() + "'";
+		}else if(MemberNodeType.manager.equals(this.type)){
+			return "'" + this.getId() + "'";
 		}else{
-			return "'user:" + this.getId() + "'";
+			return "'" + this.getId() + "'";
 		}
 	}
 	

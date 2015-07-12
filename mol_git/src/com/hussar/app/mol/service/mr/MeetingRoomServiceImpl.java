@@ -4,7 +4,6 @@
 package com.hussar.app.mol.service.mr;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +15,7 @@ import com.hussar.app.mol.dao.mr.MeetingRoomDao;
 import com.hussar.app.mol.dao.sm.ScheduledMeetingDao;
 import com.hussar.app.mol.domain.MemberNode;
 import com.hussar.app.mol.domain.MemberNodeType;
+import com.hussar.app.mol.model.Gender;
 import com.hussar.app.mol.model.MeetingRoomEntity;
 import com.hussar.app.mol.model.OrganizationEntity;
 import com.hussar.app.mol.model.UserEntity;
@@ -97,9 +97,19 @@ public class MeetingRoomServiceImpl implements MeetingRoomService {
 		List<UserEntity> list = this.userService.getUserEntityList(root.getOrganization());
 		list.addAll(this.userService.getUserEntityList(null));
 		for(UserEntity user : list){
-			root.addChild(new MemberNode(user.getId(), user.getName(), MemberNodeType.MEMBER));
+			root.addChild(new MemberNode(user.getId(), user.getName(), getMemberNodeType(user)));
 		}
 		return root;
+	}
+	
+	private MemberNodeType getMemberNodeType(UserEntity user){
+		if(Gender.MALE.equals(user.getGender())){
+			return MemberNodeType.employee_male;
+		}else if(Gender.FEMALE.equals(user.getGender())){
+			return MemberNodeType.employee_female;
+		}else{
+			return MemberNodeType.manager;
+		}
 	}
 	
 	private void appendMemberNodeChild(MemberNode memberNode){
@@ -111,7 +121,7 @@ public class MeetingRoomServiceImpl implements MeetingRoomService {
 		}
 		List<UserEntity> memberList = this.userService.getUserEntityList(memberNode.getOrganization());
 		for(UserEntity user : memberList){
-			memberNode.addChild(new MemberNode(user.getId(), user.getName(), MemberNodeType.MEMBER));
+			memberNode.addChild(new MemberNode(user.getId(), user.getName(), getMemberNodeType(user)));
 		}
 	}
 	
@@ -123,13 +133,12 @@ public class MeetingRoomServiceImpl implements MeetingRoomService {
 		while(organizationList.size() > 0){
 			org = organizationList.get(0);
 			if(org.getSuperOrganization() == null){
-				root = new MemberNode(org.getId(), org.getName(), MemberNodeType.ORGANIZATION);
-				root.setType(MemberNodeType.ORGANIZATION);
+				root = new MemberNode(org.getId(), org.getName(), MemberNodeType.top);
 				root.setOrganization(org);
 				map.put(org.getId(), root);
 				organizationList.remove(0);
 			}else{
-				MemberNode current = new MemberNode(org.getId(), org.getFullName(), MemberNodeType.ORGANIZATION);
+				MemberNode current = new MemberNode(org.getId(), org.getFullName(), MemberNodeType.org);
 				current.setOrganization(org);
 				map.put(current.getId(), current);
 				MemberNode parent = map.get(org.getSuperOrganization().getId());
